@@ -1,0 +1,1 @@
+(function(){"use strict";chrome.runtime.onInstalled.addListener(function(a){return console.log("previousVersion",a.previousVersion)}),console.log("'Allo 'Allo! Event Page")}).call(this);
