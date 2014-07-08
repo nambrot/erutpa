@@ -1,4 +1,5 @@
 @import "compass";
+@import "searches";
 
 .erutpa-learn-more-button-container {
   position: relative;
@@ -52,19 +53,17 @@
     background-color: white;
     padding: 0px 20px;
     font-family: HelveticaNeue-Light;
-    box-shadow:  0px 12px 50px -3px #AAA;
+    box-shadow: 0px 8px 10px -3px #AAA;
+    cursor: move;
     @include transform(translateZ(1px));
   }
 
-  .erutpa-keyword-card-header {
-    cursor: move;
-  }
   .erutpa-keyword-card-canvas {
 
     margin: 0px;
     background-color: #EFEFEF;
     padding: 12px;
-    height: 200px;
+    // height: 200px;
     overflow: scroll;
 
     .erutpa-keyword-card-result-item {

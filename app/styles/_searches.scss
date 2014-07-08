@@ -1,0 +1,31 @@
+.erutpa-keyword-card-search-card {
+  box-shadow: rgba(0, 0, 0, 0.0470588) 0px 2px 3px 0px;
+  background: white;
+
+  &.erutpa-wikipedia {
+
+    .erutpa-wikipedia-search-result-snippet {
+      padding: 15px;
+    }
+
+    img {
+      float: left;
+      margin-bottom: 12px;
+      margin-right: 16px;
+    }
+
+    h5 {
+      padding: 0;
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+      font-weight: lighter;
+      font-family: HelveticaNeue-Light;
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 0.7rem;
+      color: #525252;
+    }
+  }
+}
