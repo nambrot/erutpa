@@ -1,6 +1,10 @@
-define ['react', 'components/keyword_card', 'models/keyword_collection', 'underscore', 'utils/backbone_mixin'], (React, KeywordCard, KeywordCollection, _, BackboneMixin) ->
+define ['react', 'components/keyword_card', 'models/keyword_collection', 'underscore', 'utils/backbone_mixin', 'jquery', 'pep'], (React, KeywordCard, KeywordCollection, _, BackboneMixin, $, pep) ->
   {div} = React.DOM
   MainComponent = React.createClass
+    componentDidMount: ->
+      $(@getDOMNode()).pep
+        elementsWithInteraction: '.erutpa-keyword-card-canvas'
+        useCSSTranslation: false
     mixins: [BackboneMixin]
     getDefaultProps: ->
       collection: new KeywordCollection([])
@@ -10,6 +14,6 @@ define ['react', 'components/keyword_card', 'models/keyword_collection', 'unders
     addKeyword: (keyword) ->
       @props.collection.add keyword: keyword
     render: ->
-      (div className: (if @props.collection.length > 0 then "show" else ""), id: "erutpa-main-component", _.map(@props.collection.models, (keyword) ->
+      (div className: (if @props.collection.length > 0 then "show" else ""), draggable: true, id: "erutpa-main-component", _.map(@props.collection.models, (keyword) ->
         (KeywordCard model: keyword)
         ))

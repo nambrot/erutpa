@@ -1,5 +1,5 @@
 (function() {
-  require(['models/test', 'jquery', 'react', 'utils/on_selection', 'components/main_component'], function(test, $, react, on_selection, main_component) {
+  require(['models/test', 'jquery', 'react', 'utils/on_selection', 'components/main_component', 'pep'], function(test, $, react, on_selection, main_component) {
     var style;
     style = document.createElement('link');
     style.rel = 'stylesheet';
