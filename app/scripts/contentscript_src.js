@@ -1,5 +1,5 @@
 (function() {
-  require(['models/test', 'jquery', 'react', 'utils/on_selection'], function(test, jquery, react, on_selection) {
+  require(['models/test', 'jquery', 'react', 'utils/on_selection', 'components/main_component'], function(test, $, react, on_selection, main_component) {
     var style;
     style = document.createElement('link');
     style.rel = 'stylesheet';
@@ -7,8 +7,13 @@
     style.href = chrome.extension.getURL('styles/content.css');
     (document.head || document.documentElement).appendChild(style);
     return $(function() {
+      var erutpaNode, main;
+      erutpaNode = document.createElement('div');
+      main = react.renderComponent(main_component({}), erutpaNode);
+      document.body.appendChild(erutpaNode);
       return on_selection(function(obj) {
-        return console.log(obj);
+        console.log(obj);
+        return main.addKeyword(obj.modified_string);
       });
     });
   });

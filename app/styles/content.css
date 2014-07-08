@@ -1,8 +1,8 @@
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\000031}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\000033}}
 .erutpa-learn-more-button-container {
   position: relative;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\000033}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\000035}}
 .erutpa-learn-more-button-container .erutpa-learn-more-button {
   position: absolute;
   top: -23px;
@@ -21,8 +21,61 @@
   -ms-user-select: none;
   user-select: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\0000324}}
 .erutpa-learn-more-button-container .erutpa-learn-more-button:hover {
   cursor: pointer;
   box-shadow: 2px 3px 23px -5px #242424;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\0000331}}
+#erutpa-main-component {
+  display: none;
+  top: 0px;
+  position: absolute;
+  width: 400px;
+  z-index: 1000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\0000334}}
+#erutpa-main-component.show {
+  display: block;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\0000343}}
+.erutpa-keyword-card {
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\0000347}}
+.erutpa-keyword-card > header {
+  height: 60px;
+  line-height: 60px;
+  font-size: 23px;
+  background-color: white;
+  padding: 0px 20px;
+  font-family: HelveticaNeue-Light;
+  box-shadow: 0px 12px 50px -3px #AAA;
+  -webkit-transform: translateZ(1px);
+  -moz-transform: translateZ(1px);
+  -ms-transform: translateZ(1px);
+  -o-transform: translateZ(1px);
+  transform: translateZ(1px);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\0000358}}
+.erutpa-keyword-card .erutpa-keyword-card-canvas {
+  margin: 0px;
+  background-color: #EFEFEF;
+  padding: 12px;
+  height: 200px;
+  overflow: scroll;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\0000366}}
+.erutpa-keyword-card .erutpa-keyword-card-canvas .erutpa-keyword-card-result-item {
+  background-color: white;
+  overflow: hidden;
+  margin: 14px 2px;
+  overflow: hidden;
+  *zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\0000372}}
+.erutpa-keyword-card .erutpa-keyword-card-canvas .erutpa-keyword-card-result-item p {
+  font-size: 13px;
 }

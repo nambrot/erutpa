@@ -1,3 +1,5 @@
+@import "compass";
+
 .erutpa-learn-more-button-container {
   position: relative;
   .erutpa-learn-more-button {
@@ -24,4 +26,53 @@
       box-shadow: 2px 3px 23px -5px #242424;      
     }
   }
+}
+
+#erutpa-main-component {
+  display: none;
+
+  &.show {
+    display: block;
+  }
+  top: 0px;
+  position: absolute;
+  width: 400px;
+  z-index: 1000;
+}
+
+.erutpa-keyword-card {
+  // background-color: #EFEFEF;
+  overflow: hidden;
+
+  & > header {
+    height: 60px;
+    line-height: 60px;
+    font-size: 23px;
+    background-color: white;
+    padding: 0px 20px;
+    font-family: HelveticaNeue-Light;
+    box-shadow:  0px 12px 50px -3px #AAA;
+    @include transform(translateZ(1px));
+  }
+
+.erutpa-keyword-card-canvas {
+
+  margin: 0px;
+  background-color: #EFEFEF;
+  padding: 12px;
+  height: 200px;
+  overflow: scroll;
+
+  .erutpa-keyword-card-result-item {
+    background-color: white;
+    overflow: hidden;
+    margin: 14px 2px;
+    @include clearfix;
+
+    p {
+      font-size: 13px;
+    }
+  }
+}
+
 }

@@ -1,0 +1,36 @@
+{
+  "name": "jsonp",
+  "version": "0.0.1",
+  "homepage": "https://github.com/nispero/Lightweight-JSONP",
+  "authors": [
+    "Eugene Mirotin <emirotin@gmail.com>"
+  ],
+  "description": "Lightweight JSNOP without dependencies",
+  "main": "jsonp.js",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "jsonp"
+  ],
+  "license": "BSD",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.1",
+    "commit": "3a3e583620ad936bb88edf670af666e338e4cdc0"
+  },
+  "_source": "git://github.com/nispero/Lightweight-JSONP.git",
+  "_target": "~0.0.1",
+  "_originalSource": "jsonp",
+  "_direct": true
+}

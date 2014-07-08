@@ -47,7 +47,7 @@ module.exports = function (grunt) {
                 tasks: ['bowerInstall']
             },
             coffee: {
-                files: ['<%= config.app %>/scripts/{,*/}*.{coffee,litcoffee,coffee.md}'],
+                files: ['<%= config.app %>/scripts/**/*.{coffee,litcoffee,coffee.md}'],
                 tasks: ['coffee:chrome'],
                 options: {
                     livereload: true
@@ -157,7 +157,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= config.app %>/scripts',
-                    src: '{,*/}*.{coffee,litcoffee,coffee.md}',
+                    src: '**/*.{coffee,litcoffee,coffee.md}',
                     dest: '<%= config.app %>/scripts',
                     ext: '.js'
                 }]
