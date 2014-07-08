@@ -6,7 +6,8 @@
     var Wikipedia, WikipediaSearch, _ref;
     Wikipedia = {
       query: function(q, callback) {
-        return $.getJSON("http://en.wikipedia.org/w/api.php?action=query&titles=" + (escape(q)) + "&prop=info|extracts|pageimages&format=json&explaintext=true&exchars=300&inprop=url&pithumbsize=100&redirects", function(evt) {
+        return $.getJSON("https://en.wikipedia.org/w/api.php?action=query&titles=" + (escape(q)) + "&prop=info|extracts|pageimages&format=json&explaintext=true&exchars=300&inprop=url&pithumbsize=100&redirects", function(evt) {
+          delete evt.query.pages["-1"];
           return callback(_.values(evt.query.pages));
         });
       }

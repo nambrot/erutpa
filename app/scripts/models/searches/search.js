@@ -2,7 +2,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(['backbone', 'models/searches/search_result_collection'], function(Backbone, SearchResultCollection) {
+  define(['backbone', 'models/searches/search_result_collection', 'components/searches/wikipedia_search_component'], function(Backbone, SearchResultCollection, WikipediaSearchComponent) {
     var Search, _ref;
     return Search = (function(_super) {
       __extends(Search, _super);
@@ -12,7 +12,7 @@
         return _ref;
       }
 
-      Search.prototype.component = "SearchResultComponent";
+      Search.prototype.component = WikipediaSearchComponent;
 
       Search.prototype.fetchingStatus = "notYet";
 

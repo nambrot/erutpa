@@ -1,12 +1,16 @@
 # Defines the common interface for search results based on a keyword
-define ['backbone', 'models/searches/search_result_collection'], (Backbone, SearchResultCollection) ->
+define [
+  'backbone', 
+  'models/searches/search_result_collection', 
+  'components/searches/wikipedia_search_component'
+  ], (Backbone, SearchResultCollection, WikipediaSearchComponent) ->
   class Search extends Backbone.Model
     
     # should reference the Keyword
     # keyword: "Independence Day"
     
     # should reference the component to display the result
-    component: "SearchResultComponent"
+    component: WikipediaSearchComponent
     
     fetchingStatus: "notYet" # among ["notYet", "fetched"]
 

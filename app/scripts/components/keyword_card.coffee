@@ -5,20 +5,10 @@ define ['react', 'utils/backbone_mixin'], (React, BackboneMixin) ->
     render: ->
       (article className: 'erutpa-keyword-card', [
         (header {}, @props.model.get('keyword')),
-        (div className: 'erutpa-keyword-card-canvas', [
-          _.map(@props.model.searches.thatHaveResults(), (search) -> 
-            (div className: 'erutpa-keyword-card-result-item', [
-              _.map(search.searchResults.models, (searchResult) ->
-                (p {}, JSON.stringify(searchResult.attributes))
-                )
-              ])
+        (div className: 'erutpa-keyword-card-canvas', 
+          (div className: 'erutpa-keyword-card-search-list', _.map(@props.model.searches.thatHaveResults(), (search) -> 
+              (search.component model: search)
             )
-          # (div className: 'erutpa-keyword-card-result-item', [
-          #   (p {}, "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum doloribus corrupti laboriosam a provident obcaecati quia ab rerum hic cupiditate id vel accusamus impedit recusandae amet ratione ipsa eos animi.")
-          #   ]),
-          # (div {}, [
-          #   (p {}, "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum doloribus corrupti laboriosam a provident obcaecati quia ab rerum hic cupiditate id vel accusamus impedit recusandae amet ratione ipsa eos animi.")
-          #   ])
-          ])
-        
-        ])
+          )
+        )
+      ])

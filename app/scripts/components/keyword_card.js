@@ -10,17 +10,13 @@
         }, [
           header({}, this.props.model.get('keyword')), div({
             className: 'erutpa-keyword-card-canvas'
-          }, [
-            _.map(this.props.model.searches.thatHaveResults(), function(search) {
-              return div({
-                className: 'erutpa-keyword-card-result-item'
-              }, [
-                _.map(search.searchResults.models, function(searchResult) {
-                  return p({}, JSON.stringify(searchResult.attributes));
-                })
-              ]);
-            })
-          ])
+          }, div({
+            className: 'erutpa-keyword-card-search-list'
+          }, _.map(this.props.model.searches.thatHaveResults(), function(search) {
+            return search.component({
+              model: search
+            });
+          })))
         ]);
       }
     });

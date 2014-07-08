@@ -3,7 +3,8 @@ define ['backbone', 'jquery', 'models/searches/search'], (Backbone, $, Search) -
   Wikipedia =
     query: (q, callback) ->
       # http://en.wikipedia.org/w/api.php?action=query&titles=Vietnam&prop=info|extracts|pageimages&format=json&explaintext=true&exchars=300&inprop=url&pithumbsize=100
-      $.getJSON "http://en.wikipedia.org/w/api.php?action=query&titles=#{escape(q)}&prop=info|extracts|pageimages&format=json&explaintext=true&exchars=300&inprop=url&pithumbsize=100&redirects", (evt) ->
+      $.getJSON "https://en.wikipedia.org/w/api.php?action=query&titles=#{escape(q)}&prop=info|extracts|pageimages&format=json&explaintext=true&exchars=300&inprop=url&pithumbsize=100&redirects", (evt) ->
+        delete evt.query.pages["-1"]
         callback _.values(evt.query.pages)
 
   class WikipediaSearch extends Search

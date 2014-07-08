@@ -26965,17 +26965,13 @@ define('utils/backbone_mixin',[], function(){
         }, [
           header({}, this.props.model.get('keyword')), div({
             className: 'erutpa-keyword-card-canvas'
-          }, [
-            _.map(this.props.model.searches.thatHaveResults(), function(search) {
-              return div({
-                className: 'erutpa-keyword-card-result-item'
-              }, [
-                _.map(search.searchResults.models, function(searchResult) {
-                  return p({}, JSON.stringify(searchResult.attributes));
-                })
-              ]);
-            })
-          ])
+          }, div({
+            className: 'erutpa-keyword-card-search-list'
+          }, _.map(this.props.model.searches.thatHaveResults(), function(search) {
+            return search.component({
+              model: search
+            });
+          })))
         ]);
       }
     });
@@ -29990,10 +29986,37 @@ define('utils/backbone_mixin',[], function(){
 }).call(this);
 
 (function() {
+  define('components/searches/wikipedia_search_component',['react', 'utils/backbone_mixin'], function(React, BackboneMixin) {
+    var WikipediaSearchComponent, WikipediaSearchComponentRow, article, div, h5, header, li, p, section, ul, _ref;
+    _ref = React.DOM, div = _ref.div, article = _ref.article, header = _ref.header, section = _ref.section, p = _ref.p, ul = _ref.ul, li = _ref.li, h5 = _ref.h5;
+    WikipediaSearchComponentRow = React.createClass({
+      mixins: [BackboneMixin],
+      render: function() {
+        console.log(this.props.model);
+        return div({}, [h5({}, this.props.model.get("title")), p({}, this.props.model.get("extract"))]);
+      }
+    });
+    return WikipediaSearchComponent = React.createClass({
+      mixins: [BackboneMixin],
+      render: function() {
+        return div({
+          className: "erutpa-keyword-card-search-card erutpa-wikipedia"
+        }, this.props.model.searchResults.map(function(searchResult) {
+          return WikipediaSearchComponentRow({
+            model: searchResult
+          });
+        }));
+      }
+    });
+  });
+
+}).call(this);
+
+(function() {
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define('models/searches/search',['backbone', 'models/searches/search_result_collection'], function(Backbone, SearchResultCollection) {
+  define('models/searches/search',['backbone', 'models/searches/search_result_collection', 'components/searches/wikipedia_search_component'], function(Backbone, SearchResultCollection, WikipediaSearchComponent) {
     var Search, _ref;
     return Search = (function(_super) {
       __extends(Search, _super);
@@ -30003,7 +30026,7 @@ define('utils/backbone_mixin',[], function(){
         return _ref;
       }
 
-      Search.prototype.component = "SearchResultComponent";
+      Search.prototype.component = WikipediaSearchComponent;
 
       Search.prototype.fetchingStatus = "notYet";
 
@@ -30040,7 +30063,8 @@ define('utils/backbone_mixin',[], function(){
     var Wikipedia, WikipediaSearch, _ref;
     Wikipedia = {
       query: function(q, callback) {
-        return $.getJSON("http://en.wikipedia.org/w/api.php?action=query&titles=" + (escape(q)) + "&prop=info|extracts|pageimages&format=json&explaintext=true&exchars=300&inprop=url&pithumbsize=100&redirects", function(evt) {
+        return $.getJSON("https://en.wikipedia.org/w/api.php?action=query&titles=" + (escape(q)) + "&prop=info|extracts|pageimages&format=json&explaintext=true&exchars=300&inprop=url&pithumbsize=100&redirects", function(evt) {
+          delete evt.query.pages["-1"];
           return callback(_.values(evt.query.pages));
         });
       }
