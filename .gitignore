@@ -17,6 +17,7 @@ config/secrets.yml
 node_modules
 app/bower_components
 app/scripts/**/*.js
+!app/scripts/utils/*.js
 
 ## Environment normalisation:
 /.bundle
