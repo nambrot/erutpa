@@ -16,6 +16,7 @@ config/secrets.yml
 .sass-cache
 node_modules
 app/bower_components
+app/scripts/**/*.js
 
 ## Environment normalisation:
 /.bundle
