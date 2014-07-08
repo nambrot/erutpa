@@ -6,7 +6,13 @@ define ['react', 'components/keyword_card', 'models/keyword_collection', 'unders
         handle: '.erutpa-keyword-card-header'
         elementsWithInteraction: '.erutpa-keyword-card-canvas'
         useCSSTranslation: false
+      $('body').on 'click.erutpa', =>
+        @removeErutpa()
+      $('body').on 'click.erutpa', '#erutpa-main-component', (evt) ->
+        evt.stopPropagation()
     mixins: [BackboneMixin]
+    removeErutpa: ->
+      @props.collection.reset []
     getDefaultProps: ->
       collection: new KeywordCollection([])
     getInitialState: ->

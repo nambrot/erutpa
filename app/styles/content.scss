@@ -38,6 +38,7 @@
   position: absolute;
   width: 400px;
   z-index: 1000;
+  box-shadow: rgba(0, 0, 0, 0.298039) 10px 14px 40px -1px;
 }
 
 .erutpa-keyword-card {
@@ -55,24 +56,27 @@
     @include transform(translateZ(1px));
   }
 
-.erutpa-keyword-card-canvas {
+  .erutpa-keyword-card-header {
+    cursor: move;
+  }
+  .erutpa-keyword-card-canvas {
 
-  margin: 0px;
-  background-color: #EFEFEF;
-  padding: 12px;
-  height: 200px;
-  overflow: scroll;
+    margin: 0px;
+    background-color: #EFEFEF;
+    padding: 12px;
+    height: 200px;
+    overflow: scroll;
 
-  .erutpa-keyword-card-result-item {
-    background-color: white;
-    overflow: hidden;
-    margin: 14px 2px;
-    @include clearfix;
+    .erutpa-keyword-card-result-item {
+      background-color: white;
+      overflow: hidden;
+      margin: 14px 2px;
+      @include clearfix;
 
-    p {
-      font-size: 13px;
+      p {
+        font-size: 13px;
+      }
     }
   }
-}
 
 }
