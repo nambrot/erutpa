@@ -13,7 +13,7 @@ define ['jquery'], ($) ->
       
       $('body').on 'click.erutpa', '.erutpa-learn-more-button', (evt) =>
         sel = window.getSelection()
-        callback(selection_object)
+        callback(selection_object, evt)
         setTimeout ( =>
           sel = window.getSelection()
           sel.removeAllRanges()

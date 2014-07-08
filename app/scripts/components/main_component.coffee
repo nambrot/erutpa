@@ -13,13 +13,34 @@ define ['react', 'components/keyword_card', 'models/keyword_collection', 'unders
     mixins: [BackboneMixin]
     removeErutpa: ->
       @props.collection.reset []
+    moveWindowIntoViewport: ->
+
+    moveComponentToMousePosition: (evt) ->
+      windowWidth = $(window).width()
+      mouseX = evt.pageX
+      mouseY = evt.pageY
+      scrollTop = $('body').scrollTop()
+      componentWidth = 400
+      if mouseX + componentWidth > windowWidth - 40
+        # we are too right
+        left = mouseX - componentWidth
+        if left < 10
+          left = 10
+      else
+        left = mouseX + 10
+
+
+      $(@getDOMNode()).css left: left, top: scrollTop + 30
+      # mousePosition = 
     getDefaultProps: ->
       collection: new KeywordCollection([])
     getInitialState: ->
-      x: this.props.x || 0
-      y: this.props.y || 0
-    addKeyword: (keyword) ->
+      {}
+    addKeyword: (keyword, evt) ->
+      console.log evt
       @props.collection.add keyword: keyword
+      if @props.collection.length == 1
+        @moveComponentToMousePosition(evt)
     render: ->
       (div className: (if @props.collection.length > 0 then "show" else ""), id: "erutpa-main-component", _.map(@props.collection.models, (keyword) ->
         (KeywordCard model: keyword)

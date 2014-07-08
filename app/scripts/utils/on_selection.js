@@ -20,7 +20,7 @@
         $('body').on('click.erutpa', '.erutpa-learn-more-button', function(evt) {
           var sel;
           sel = window.getSelection();
-          callback(selection_object);
+          callback(selection_object, evt);
           setTimeout((function() {
             sel = window.getSelection();
             sel.removeAllRanges();

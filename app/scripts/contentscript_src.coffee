@@ -11,6 +11,5 @@ require ['models/test', 'jquery', 'react', 'utils/on_selection', 'components/mai
 
     main = react.renderComponent (main_component {}), erutpaNode
     document.body.appendChild erutpaNode
-    on_selection (obj) ->
-      console.log obj
-      main.addKeyword obj.modified_string
+    on_selection (obj, evt) ->
+      main.addKeyword obj.modified_string, evt
