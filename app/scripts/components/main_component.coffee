@@ -9,10 +9,6 @@ define ['react', 'components/keyword_card', 'models/keyword_collection', 'unders
       domNode = $(@getDOMNode())
       $('body').on 'click.erutpa', (evt) =>
         @removeErutpa() unless domNode.has(evt.target).length > 0
- 
-    onClick: (evt) ->
-      console.log 'main'
-      evt.stopPropagation()
     mixins: [BackboneMixin]
     removeErutpa: ->
       @props.collection.reset []
@@ -43,6 +39,6 @@ define ['react', 'components/keyword_card', 'models/keyword_collection', 'unders
       if @props.collection.length == 1
         @moveComponentToMousePosition(evt)
     render: ->
-      (div className: (if @props.collection.length > 0 then "show" else ""), id: "erutpa-main-component", onClick: @onClick, _.map(@props.collection.models, (keyword) ->
+      (div className: (if @props.collection.length > 0 then "show" else ""), id: "erutpa-main-component", _.map(@props.collection.models, (keyword) ->
         (KeywordCard model: keyword)
         ))

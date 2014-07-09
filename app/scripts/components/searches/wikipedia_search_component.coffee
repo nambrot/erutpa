@@ -4,7 +4,11 @@ define ['react', 'utils/backbone_mixin', 'underscore'], (React, BackboneMixin, _
   WikipediaDetailComponent = React.createClass
     mixins: [BackboneMixin]
     render: ->
-      (div className: 'erutpa-detail-component erutpa-wikipedia', "DetailView")
+      console.log @props.model
+      if @props.model.get("text")
+        (div className: 'erutpa-detail-component erutpa-wikipedia', dangerouslySetInnerHTML: {__html: @props.model.get("text")})
+      else
+        (div className: 'erutpa-detail-component erutpa-wikipedia', "LOading")
   WikipediaSearchComponentRow = React.createClass
     mixins: [BackboneMixin]
     render: ->

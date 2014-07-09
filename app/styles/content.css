@@ -133,7 +133,7 @@
   overflow-y: scroll;
   overflow-x: hidden;
   width: 100%;
-  height: 100%;
+  max-height: 500px;
   white-space: nowrap;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\00003111}}
@@ -165,4 +165,20 @@
   max-width: 1000000px;
   vertical-align: top;
   border-radius: 12px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\00003138}}
+.erutpa-detail-component {
+  box-shadow: rgba(0, 0, 0, 0.04706) 0px 2px 3px 0px;
+  background: white;
+  text-align: left;
+  padding: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\00003145}}
+.erutpa-detail-component.erutpa-wikipedia p {
+  font-size: 14px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\00003149}}
+.erutpa-detail-component.erutpa-wikipedia h2 {
+  font-size: 24px;
 }

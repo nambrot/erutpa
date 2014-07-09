@@ -2,8 +2,9 @@
 define [
   'backbone', 
   'models/searches/search_result_collection', 
-  'components/searches/wikipedia_search_component'
-  ], (Backbone, SearchResultCollection, WikipediaSearchComponent) ->
+  'components/searches/wikipedia_search_component',
+  'models/searches/search_result'
+  ], (Backbone, SearchResultCollection, WikipediaSearchComponent, SearchResult) ->
   class Search extends Backbone.Model
     
     # should reference the Keyword
@@ -14,9 +15,12 @@ define [
     
     fetchingStatus: "notYet" # among ["notYet", "fetched"]
 
+    searchResultModel: SearchResult
+
     initialize: (options) ->
       super options
       @searchResults = new SearchResultCollection [], search: this
+      , model: @searchResultModel
       @searchResults.on 'change reset add remove', =>
         @trigger 'change'
     # should fetch the relevant information
