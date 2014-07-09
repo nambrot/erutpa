@@ -31,7 +31,8 @@
 
 #erutpa-main-component {
   display: none;
-
+  font-size: 14px;
+  line-height: 18px;
   &.show {
     display: block;
   }
@@ -86,6 +87,8 @@
     line-height: 60px;
     font-size: 23px;
     font-family: HelveticaNeue-Light;
+    font-weight: normal;
+    text-align: left;
   }
   
   background-color: white;
@@ -129,7 +132,7 @@
   display: inline-block;
   height: 95%;
   margin-top: 0.675%;
-  
+  box-sizing: border-box;
   max-width: 1000000px;
   vertical-align: top;
   border-radius: 12px;
@@ -144,6 +147,7 @@
   &.erutpa-wikipedia {
     p {
       font-size: 14px;
+      line-height: 20px;
     }
 
     h2 {

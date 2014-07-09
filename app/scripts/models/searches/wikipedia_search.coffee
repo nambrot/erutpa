@@ -11,7 +11,9 @@ define [
         callback _.values(evt.query.pages)
     parse: (title, callback) ->
       $.getJSON "https://en.wikipedia.org/w/api.php?action=parse&format=json&page=#{escape(title)}&redirects=&prop=text&disableeditsection=", (evt) ->
-        callback evt.parse.text["*"]
+        text = evt.parse.text["*"]
+        text = text.replace /<a href="\/w/g, '<a href="//en.wikipedia.org/w'
+        callback text
   
   class WikipediaSearchResult extends Backbone.Model
     
