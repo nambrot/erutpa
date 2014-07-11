@@ -27,5 +27,6 @@ define ['react', 'utils/backbone_mixin'], (React, BackboneMixin) ->
         (div className: 'erutpa-keyword-card-canvas', @state.subviews.map((subview, index) => 
             style = marginLeft: "-#{400 * (@state.subviews.length - 1)}px" if index is 0
             (div className: "erutpa-keyword-card-subview", style: style, subview)
-          ))
+          )),
+        (span className: 'erutpa-keyword-card-bottom-bar')
       ])

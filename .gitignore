@@ -19,6 +19,7 @@ app/bower_components
 app/scripts/**/*.js
 app/scripts/contentscript.js.map
 !app/scripts/utils/*.js
+app/styles/content.css
 
 ## Environment normalisation:
 /.bundle

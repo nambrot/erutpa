@@ -9,7 +9,8 @@ define [
       $.getJSON "https://en.wikipedia.org/w/api.php?action=query&titles=#{escape(q)}&prop=info|extracts|pageimages&format=json&explaintext=true&exchars=300&inprop=url&pithumbsize=100&redirects", (evt) ->
         delete evt.query.pages["-1"]
         callback _.values(evt.query.pages)
-    parse: (title, callback) ->
+    parse: (url, callback) ->
+      title = url.match(/\/\/en.wikipedia.org\/wiki\/(.*)/)[1]
       $.getJSON "https://en.wikipedia.org/w/api.php?action=parse&format=json&page=#{escape(title)}&redirects=&prop=text&disableeditsection=", (evt) ->
         text = evt.parse.text["*"]
         text = text.replace /<a href="\/w/g, '<a href="//en.wikipedia.org/w'
@@ -25,7 +26,7 @@ define [
     initialize: ->
       @fetch()
     fetch: ->
-      Wikipedia.parse @get('title'), (text) =>
+      Wikipedia.parse @get('fullurl'), (text) =>
         @set "text", text
         console.log this
   class WikipediaSearch extends Search
