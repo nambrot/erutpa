@@ -1,13 +1,10 @@
-define ['react', 'utils/backbone_mixin', 'underscore'], (React, BackboneMixin, _) ->
+define ['react', 'utils/backbone_mixin', 'underscore', 'components/search_list_component'], (React, BackboneMixin, _, SearchListComponent) ->
   {div, article, header, section, p, ul, li, h2, span} = React.DOM
+
   KeywordCard = React.createClass
     # model: Keyword
     getInitialState: ->
-      subviews: [
-        (div className: 'erutpa-keyword-card-search-list', _.map(@props.model.searches.thatHaveResults(), (search) => 
-                (search.component model: search, addSubview: @addSubview)
-          )
-        )]
+      subviews: [(SearchListComponent model: @props.model, addSubview: @addSubview)]
     getHandlingSearchFromLink: (link) ->
       _.chain @props.model.searches.models
         .map (search) -> ( search.canHandleLink(link) )
@@ -46,5 +43,5 @@ define ['react', 'utils/backbone_mixin', 'underscore'], (React, BackboneMixin, _
             style = marginLeft: "-#{400 * (@state.subviews.length - 1)}px" if index is 0
             (div className: "erutpa-keyword-card-subview", style: style, subview)
           )),
-        (span className: 'erutpa-keyword-card-bottom-bar')
+        (div className: 'erutpa-keyword-card-bottom-bar', _.last(@state.subviews).titleView())
       ])
