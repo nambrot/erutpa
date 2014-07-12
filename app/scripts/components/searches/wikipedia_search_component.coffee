@@ -1,13 +1,6 @@
-define ['react', 'utils/backbone_mixin', 'underscore'], (React, BackboneMixin, _) ->
+define ['react', 'utils/backbone_mixin', 'underscore', 'components/searches/wikipedia_detail_component'], (React, BackboneMixin, _, WikipediaDetailComponent) ->
   {div, article, header, section, p, ul, li, h5, a, img} = React.DOM
 
-  WikipediaDetailComponent = React.createClass
-    mixins: [BackboneMixin]
-    render: ->
-      if @props.model.get("text")
-        (div className: 'erutpa-detail-component erutpa-wikipedia', dangerouslySetInnerHTML: {__html: @props.model.get("text")})
-      else
-        (div className: 'erutpa-detail-component erutpa-wikipedia', "LOading")
   WikipediaSearchComponentRow = React.createClass
     mixins: [BackboneMixin]
     render: ->

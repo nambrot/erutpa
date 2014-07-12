@@ -121,6 +121,7 @@
 
   .erutpa-keyword-card-subview {
     @include transition(all 0.3s ease-in-out);
+    overflow: hidden;
     padding: 12px;  
     width: 400px;
     display: inline-block;

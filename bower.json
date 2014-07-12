@@ -8,6 +8,7 @@
     "underscore": "~1.6.0",
     "backbone": "~1.1.2",
     "jsonp": "~0.0.1",
+    "q": "~1.0.1"
   },
   "devDependencies": {}
 }

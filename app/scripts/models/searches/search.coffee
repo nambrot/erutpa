@@ -27,3 +27,12 @@ define [
     fetch: ->
       return if @fetchingStatus is "fetched"
       @fetchingStatus = "fetched"
+
+    # should pattern match against the link, return false if can't, return self if it can
+    canHandleLink: (link) ->
+      false
+
+    # return false if not, searchResult if
+    getSearchResultFromLink: (link) ->
+      false
+
