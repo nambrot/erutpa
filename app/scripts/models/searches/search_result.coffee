@@ -2,8 +2,10 @@
 define ['backbone'], (Backbone) ->
   class SearchResult extends Backbone.Model
     
-    # should reference the Keyword
-    # keyword: "Independence Day"
+    # ------- TO SUBCLASS ----------
     
     # should reference the component to display the result
-    component: "SearchResultComponent"
+    # component: "SearchResultComponent"
+
+    # optionally fetch the full data needed to display
+    # fetch: ->

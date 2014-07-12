@@ -3,9 +3,11 @@ define [
   'backbone',
   'jquery',
   'models/searches/search',
+  'models/searches/search_result'
   'q',
-  'components/searches/wikipedia_detail_component'
-  ], (Backbone, $, Search, Q, WikipediaDetailComponent) ->
+  'services/wikipedia/wikipedia_detail_component',
+  'services/wikipedia/wikipedia_search_component'
+  ], (Backbone, $, Search, SearchResult, Q, WikipediaDetailComponent, WikipediaSearchComponent) ->
   Wikipedia =
     query: (q) ->
       deferred = Q.defer()
@@ -29,7 +31,7 @@ define [
 
       deferred.promise
   
-  class WikipediaSearchResult extends Backbone.Model
+  class WikipediaSearchResult extends SearchResult
     
     # should reference the Keyword
     # keyword: "Independence Day"
@@ -50,13 +52,13 @@ define [
     # keyword: "Independence Day"
     
     # should reference the component to display the result
-    # component: "SearchResultComponent"
-    
+    component: WikipediaSearchComponent
     searchResultModel: WikipediaSearchResult
     # should fetch the relevant information
     fetch: ->
       super()
-      Wikipedia.query @get('keyword').get('keyword')
+      return unless @collection.keyword
+      Wikipedia.query @collection.keyword.get('keyword')
       .then (results) =>
         @searchResults.add results
 

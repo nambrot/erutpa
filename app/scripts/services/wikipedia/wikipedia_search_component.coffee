@@ -1,4 +1,4 @@
-define ['react', 'utils/backbone_mixin', 'underscore', 'components/searches/wikipedia_detail_component'], (React, BackboneMixin, _, WikipediaDetailComponent) ->
+define ['react', 'utils/backbone_mixin', 'underscore', 'services/wikipedia/wikipedia_detail_component'], (React, BackboneMixin, _, WikipediaDetailComponent) ->
   {div, article, header, section, p, ul, li, h5, a, img} = React.DOM
 
   WikipediaSearchComponentRow = React.createClass

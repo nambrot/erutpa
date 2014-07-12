@@ -1,6 +1,7 @@
-define ['models/searches/search', 'models/searches/wikipedia_search', 'backbone'], (Search, WikipediaSearch, Backbone) ->
+define ['models/searches/search', 'services/wikipedia/wikipedia_search', 'backbone'], (Search, WikipediaSearch, Backbone) ->
   class SearchCollection extends Backbone.Collection
-    # keyword: "Keyword"
+    # gets initialized with keyword
+    # keyword: Keyword
     initialize: (collection, options) ->
       super options
       @keyword = options.keyword if options.keyword
@@ -11,5 +12,5 @@ define ['models/searches/search', 'models/searches/wikipedia_search', 'backbone'
       _.where @models, (model) -> (model.searchResults.length > 1)
 
     searchDefault: ->
-      @add new WikipediaSearch keyword: @keyword
+      @add new WikipediaSearch
       @each (model) -> model.fetch()

@@ -5,11 +5,15 @@ define ['react', 'utils/backbone_mixin', 'underscore', 'components/search_list_c
     # model: Keyword
     getInitialState: ->
       subviews: [(SearchListComponent model: @props.model, addSubview: @addSubview)]
+
+    # display links we can handle
     getHandlingSearchFromLink: (link) ->
       _.chain @props.model.searches.models
         .map (search) -> ( search.canHandleLink(link) )
         .find (val) -> (val)
         .value()
+
+    #attach link handler
     componentDidMount: ->
       $(@getDOMNode()).on 'click.erutpa', 'a', (evt) =>
         if search = @getHandlingSearchFromLink(evt.target.href)
@@ -21,6 +25,7 @@ define ['react', 'utils/backbone_mixin', 'underscore', 'components/search_list_c
           false
         else
           false
+
     addSubview: (subview) ->
       # we have to wrap in a function to avoid it getting moounted earlier
       subview = subview()

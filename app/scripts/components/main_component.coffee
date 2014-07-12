@@ -1,6 +1,9 @@
 define ['react', 'components/keyword_card', 'models/keyword_collection', 'underscore', 'utils/backbone_mixin', 'jquery', 'utils/pep'], (React, KeywordCard, KeywordCollection, _, BackboneMixin, $, pep) ->
   {div} = React.DOM
   MainComponent = React.createClass
+    mixins: [BackboneMixin]
+
+    #detect external clicks
     componentDidMount: ->
       $(@getDOMNode()).pep
         handle: '.erutpa-keyword-card-header'
@@ -9,11 +12,10 @@ define ['react', 'components/keyword_card', 'models/keyword_collection', 'unders
       domNode = $(@getDOMNode())
       $('body').on 'click.erutpa', (evt) =>
         @removeErutpa() unless domNode.has(evt.target).length > 0
-    mixins: [BackboneMixin]
     removeErutpa: ->
       @props.collection.reset []
-    moveWindowIntoViewport: ->
 
+    #move component into view port, ideally close to mouse position
     moveComponentToMousePosition: (evt) ->
       windowWidth = $(window).width()
       mouseX = evt.pageX
@@ -31,13 +33,11 @@ define ['react', 'components/keyword_card', 'models/keyword_collection', 'unders
 
     getDefaultProps: ->
       collection: new KeywordCollection([])
-    getInitialState: ->
-      {}
     addKeyword: (keyword, evt) ->
-      console.log evt
       @props.collection.add keyword: keyword
       if @props.collection.length == 1
         @moveComponentToMousePosition(evt)
+    
     render: ->
       (div className: (if @props.collection.length > 0 then "show" else ""), id: "erutpa-main-component", _.map(@props.collection.models, (keyword) ->
         (KeywordCard model: keyword)

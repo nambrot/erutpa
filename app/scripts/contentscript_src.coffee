@@ -1,4 +1,4 @@
-require ['models/test', 'jquery', 'react', 'utils/on_selection', 'components/main_component'], (test, $, react, on_selection, main_component) ->
+require ['jquery', 'react', 'utils/on_selection', 'components/main_component'], ($, react, on_selection, main_component) ->
   # inject css
   style = document.createElement('link')
   style.rel = 'stylesheet'

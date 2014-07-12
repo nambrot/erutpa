@@ -1,0 +1,112 @@
+#erutpa-main-component {
+  .erutpa-keyword-card-search-card {
+    box-shadow: rgba(0, 0, 0, 0.0470588) 0px 2px 3px 0px;
+    background: white;
+    text-align: left;
+    
+    &.erutpa-wikipedia {
+
+      .erutpa-wikipedia-search-result-snippet {
+        padding: 15px;
+      }
+
+      img {
+        float: left;
+        margin-bottom: 12px;
+        margin-right: 16px;
+      }
+
+      h5 {
+        clear: none;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 12px;
+        font-size: 24px;
+        font-weight: lighter;
+        font-family: HelveticaNeue-Light;
+        font-size: 1rem;
+      }
+
+      p {
+        clear: none;
+        line-height: 17px;
+        font-size: 12px;
+        color: #525252;
+      }
+
+    }
+  }
+
+  .erutpa-detail-component.eurtpa-wikipedia {
+    &.erutpa-wikipedia {
+      p {
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      .ambox {
+        display: none;
+      }
+      .hatnote {
+        font-size: 14px;
+        line-height: 19px;
+        margin: 16px;
+      }
+
+      .thumb {
+        margin-bottom: 12px;
+
+        &.tright {
+          clear: right;
+          float: right;
+          margin: .5em 0 1.3em 1.4em;
+        }
+
+        .thumbinner {
+          max-width: 100%;
+          border: 1px solid #ccc;
+          padding: 3px !important;
+          background-color: #f9f9f9;
+          font-size: 94%;
+          text-align: center;
+          overflow: hidden;
+        }
+        .thumbcaption {
+          .magnify {
+            display: none;
+          }
+          font-size: 12px;
+        }
+      }
+
+      .infobox {
+        border: 1px solid #aaa;
+        background-color: #f9f9f9;
+        color: black;
+        margin: 0.5em 0 0.5em 1em;
+        padding: 0.2em;
+        clear: both;
+        text-align: left;
+        font-size: 88%;
+        line-height: 1.5em;
+      }
+
+      caption {
+        font-weight: bold;
+      }
+
+      .reflist, .refbegin {
+        @include column-count(1);
+        padding: 0;
+        ol, ul {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+}
