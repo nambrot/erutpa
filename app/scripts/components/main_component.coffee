@@ -7,7 +7,7 @@ define ['react', 'components/keyword_card', 'models/keyword_collection', 'unders
     componentDidMount: ->
       $(@getDOMNode()).pep
         handle: '.erutpa-keyword-card-header'
-        elementsWithInteraction: '.erutpa-keyword-card-canvas'
+        elementsWithInteraction: 'input'
         useCSSTranslation: false
       domNode = $(@getDOMNode())
       $('body').on 'click.erutpa', (evt) =>

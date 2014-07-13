@@ -6,12 +6,18 @@ define ['backbone', 'models/searches/search_collection'], (Backbone, SearchColle
 
     initialize: (options) ->
       super options
+      @setup()
+      
+    setup: ->
       @searches =  new SearchCollection [], keyword: this
       @searches.on 'change reset add remove', =>
-        console.log 'somethin changed'
         @trigger 'change'
       @fetch()
 
+    resetKeyword: (keyword) =>
+      @set 'keyword', keyword
+      @setup()
+      
     # fetch relevant data
     fetch: ->
       @searches.searchDefault() 
