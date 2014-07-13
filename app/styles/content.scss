@@ -113,13 +113,15 @@
 
     .erutpa-keyword-card-keyword-input {
       margin: 15px 0;
-      padding-left: 14px;
+      margin-left: 6px;
+      padding-left: 10px;
       line-height: 30px;
       font-size: 23px;
       font-family: HelveticaNeue-Light;
       font-weight: normal;
       text-align: left;
       width: 300px;
+      border: none;
 
       &:hover, &:focus {
         box-shadow: inset 2px 2px 7px 2px rgba(0,0,0,0.5);
