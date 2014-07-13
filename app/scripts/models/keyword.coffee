@@ -8,6 +8,7 @@ define ['backbone', 'models/searches/search_collection'], (Backbone, SearchColle
       super options
       @searches =  new SearchCollection [], keyword: this
       @searches.on 'change reset add remove', =>
+        console.log 'somethin changed'
         @trigger 'change'
       @fetch()
 

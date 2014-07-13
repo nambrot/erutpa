@@ -56,11 +56,12 @@ define [
     searchResultModel: WikipediaSearchResult
     # should fetch the relevant information
     fetch: ->
-      super()
-      return unless @collection.keyword
+      @fetching()
       Wikipedia.query @collection.keyword.get('keyword')
       .then (results) =>
         @searchResults.add results
+      .fin =>
+        @fetched()
 
     canHandleLink: (link) ->
       this

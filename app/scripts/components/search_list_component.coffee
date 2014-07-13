@@ -3,16 +3,20 @@ define ['react', 'utils/backbone_mixin', 'underscore'], (React, BackboneMixin, _
   SearchListComponent = React.createClass
     mixins: [BackboneMixin]
     titleView: ->
-      searchesWithResults = @props.model.searches.thatHaveResults()
-      if searchesWithResults.length > 0
-        (span {}, "Search Results for #{@props.model.get('keyword')}")
-      else
+      if @props.model.searches.thatStillFetch().length > 0
         (span {}, "Searching for #{@props.model.get('keyword')}")
+      else
+        (span {}, "Search Results for #{@props.model.get('keyword')}")
+
     render: ->
       searchesWithResults = @props.model.searches.thatHaveResults()
+      console.log @props.model.searches, searchesWithResults
       if searchesWithResults.length > 0
         (div className: "erutpa-keyword-card-search-list", searchesWithResults.map (search) => 
                 (search.component model: search, addSubview: @props.addSubview)
         )
       else
-        (div className: 'erutpa-keyword-card-search-list', "Searching ...")
+        if @props.model.searches.thatStillFetch().length > 0
+          (div className: 'erutpa-keyword-card-search-list', "Searching ...")
+        else
+          (div className: 'erutpa-keyword-card-search-list', "Nothing Found")

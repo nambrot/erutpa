@@ -12,7 +12,15 @@ define [
     # should reference the component to display the result in a search list
     # component: Component
     
-    fetchingStatus: "notYet" # among ["notYet", "fetched"]
+    fetchingStatus: "notYet" # among ["notYet", "fetched", "fetching"]
+
+    fetching: ->
+      @fetchingStatus = "fetching"
+      @trigger "fetching change"
+
+    fetched: ->
+      @fetchingStatus = "fetched"
+      @trigger "fetched change"
 
     initialize: (options) ->
       super options
@@ -28,8 +36,10 @@ define [
 
     # should fetch the relevant information
     fetch: ->
-      return if @fetchingStatus is "fetched"
-      @fetchingStatus = "fetched"
+      return unless @fetchingStatus is "notYet"
+      @fetching()
+      # do the fetching
+      @fetched()
 
     # should pattern match against the link, return false if can't, return self if it can
     canHandleLink: (link) ->

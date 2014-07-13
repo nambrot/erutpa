@@ -9,7 +9,10 @@ define ['models/searches/search', 'services/wikipedia/wikipedia_search', 'backbo
     model: Search
 
     thatHaveResults: ->
-      _.where @models, (model) -> (model.searchResults.length > 1)
+      _.filter @models, (model) -> (model.searchResults.length > 0)
+
+    thatStillFetch: ->
+      _.filter @models, (model) -> (model.fetchingStatus == "fetching")
 
     searchDefault: ->
       @add new WikipediaSearch
