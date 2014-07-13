@@ -163,13 +163,7 @@ module.exports = function (grunt) {
                 }]
             },
             dist: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= config.app %>/scripts',
-                    src: '{,*/}*.{coffee,litcoffee,coffee.md}',
-                    dest: '<%= config.dist %>/scripts',
-                    ext: '.js'
-                }]
+                files: []
             },
             test: {
                 files: [{
@@ -405,7 +399,6 @@ module.exports = function (grunt) {
         'chromeManifest:dist',
         'useminPrepare',
         'concurrent:dist',
-        'cssmin',
         'concat',
         'uglify',
         'copy',

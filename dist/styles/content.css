@@ -1,0 +1,340 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/_reset\.scss}line{font-family:\0000314}}
+#erutpa-main-component html, #erutpa-main-component body, #erutpa-main-component div, #erutpa-main-component span, #erutpa-main-component object, #erutpa-main-component iframe,
+#erutpa-main-component h1, #erutpa-main-component h2, #erutpa-main-component h3, #erutpa-main-component h4, #erutpa-main-component h5, #erutpa-main-component h6, #erutpa-main-component p, #erutpa-main-component blockquote, #erutpa-main-component pre,
+#erutpa-main-component a, #erutpa-main-component abbr, #erutpa-main-component acronym, #erutpa-main-component address, #erutpa-main-component big, #erutpa-main-component cite, #erutpa-main-component code,
+#erutpa-main-component del, #erutpa-main-component dfn, #erutpa-main-component em, #erutpa-main-component img, #erutpa-main-component ins, #erutpa-main-component kbd, #erutpa-main-component q, #erutpa-main-component s, #erutpa-main-component samp,
+#erutpa-main-component small, #erutpa-main-component strike, #erutpa-main-component strong, #erutpa-main-component sub, #erutpa-main-component sup, #erutpa-main-component tt, #erutpa-main-component var,
+#erutpa-main-component b, #erutpa-main-component u, #erutpa-main-component i, #erutpa-main-component center,
+#erutpa-main-component dl, #erutpa-main-component dt, #erutpa-main-component dd, #erutpa-main-component ol, #erutpa-main-component ul, #erutpa-main-component li,
+#erutpa-main-component fieldset, #erutpa-main-component form, #erutpa-main-component label, #erutpa-main-component legend,
+#erutpa-main-component table, #erutpa-main-component caption, #erutpa-main-component tbody, #erutpa-main-component tfoot, #erutpa-main-component thead, #erutpa-main-component tr, #erutpa-main-component th, #erutpa-main-component td,
+#erutpa-main-component article, #erutpa-main-component aside, #erutpa-main-component canvas, #erutpa-main-component details, #erutpa-main-component embed,
+#erutpa-main-component figure, #erutpa-main-component figcaption, #erutpa-main-component footer, #erutpa-main-component header, #erutpa-main-component hgroup, #erutpa-main-component nav, #erutpa-main-component output, #erutpa-main-component ruby, #erutpa-main-component section,
+#erutpa-main-component time, #erutpa-main-component mark, #erutpa-main-component audio, #erutpa-main-component video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/_reset\.scss}line{font-family:\0000322}}
+#erutpa-main-component h1, #erutpa-main-component h2, #erutpa-main-component h3, #erutpa-main-component h4, #erutpa-main-component h5, #erutpa-main-component h6 {
+  margin-top: 0.5rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/_reset\.scss}line{font-family:\0000328}}
+#erutpa-main-component p {
+  margin-bottom: 14px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/services\/_wikipedia\.scss}line{font-family:\000032}}
+#erutpa-main-component .erutpa-keyword-card-search-card {
+  box-shadow: rgba(0, 0, 0, 0.04706) 0px 2px 3px 0px;
+  background: white;
+  text-align: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/services\/_wikipedia\.scss}line{font-family:\000039}}
+#erutpa-main-component .erutpa-keyword-card-search-card.erutpa-wikipedia .erutpa-wikipedia-search-result-snippet {
+  padding: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/services\/_wikipedia\.scss}line{font-family:\0000313}}
+#erutpa-main-component .erutpa-keyword-card-search-card.erutpa-wikipedia img {
+  float: left;
+  margin-bottom: 12px;
+  margin-right: 16px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/services\/_wikipedia\.scss}line{font-family:\0000319}}
+#erutpa-main-component .erutpa-keyword-card-search-card.erutpa-wikipedia h5 {
+  clear: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 12px;
+  font-size: 24px;
+  font-weight: lighter;
+  font-family: HelveticaNeue-Light;
+  font-size: 1rem;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/services\/_wikipedia\.scss}line{font-family:\0000330}}
+#erutpa-main-component .erutpa-keyword-card-search-card.erutpa-wikipedia p {
+  clear: none;
+  line-height: 17px;
+  font-size: 12px;
+  color: #525252;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/services\/_wikipedia\.scss}line{font-family:\0000342}}
+#erutpa-main-component .erutpa-detail-component.eurtpa-wikipedia.erutpa-wikipedia p {
+  font-size: 14px;
+  line-height: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/services\/_wikipedia\.scss}line{font-family:\0000347}}
+#erutpa-main-component .erutpa-detail-component.eurtpa-wikipedia.erutpa-wikipedia h2 {
+  font-size: 24px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/services\/_wikipedia\.scss}line{font-family:\0000351}}
+#erutpa-main-component .erutpa-detail-component.eurtpa-wikipedia.erutpa-wikipedia .ambox {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/services\/_wikipedia\.scss}line{font-family:\0000354}}
+#erutpa-main-component .erutpa-detail-component.eurtpa-wikipedia.erutpa-wikipedia .hatnote {
+  font-size: 14px;
+  line-height: 19px;
+  margin: 16px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/services\/_wikipedia\.scss}line{font-family:\0000360}}
+#erutpa-main-component .erutpa-detail-component.eurtpa-wikipedia.erutpa-wikipedia .thumb {
+  margin-bottom: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/services\/_wikipedia\.scss}line{font-family:\0000363}}
+#erutpa-main-component .erutpa-detail-component.eurtpa-wikipedia.erutpa-wikipedia .thumb.tright {
+  clear: right;
+  float: right;
+  margin: .5em 0 1.3em 1.4em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/services\/_wikipedia\.scss}line{font-family:\0000369}}
+#erutpa-main-component .erutpa-detail-component.eurtpa-wikipedia.erutpa-wikipedia .thumb .thumbinner {
+  max-width: 100%;
+  border: 1px solid #ccc;
+  padding: 3px !important;
+  background-color: #f9f9f9;
+  font-size: 94%;
+  text-align: center;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/services\/_wikipedia\.scss}line{font-family:\0000378}}
+#erutpa-main-component .erutpa-detail-component.eurtpa-wikipedia.erutpa-wikipedia .thumb .thumbcaption {
+  font-size: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/services\/_wikipedia\.scss}line{font-family:\0000379}}
+#erutpa-main-component .erutpa-detail-component.eurtpa-wikipedia.erutpa-wikipedia .thumb .thumbcaption .magnify {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/services\/_wikipedia\.scss}line{font-family:\0000386}}
+#erutpa-main-component .erutpa-detail-component.eurtpa-wikipedia.erutpa-wikipedia .infobox {
+  border: 1px solid #aaa;
+  background-color: #f9f9f9;
+  color: black;
+  margin: 0.5em 0 0.5em 1em;
+  padding: 0.2em;
+  clear: both;
+  text-align: left;
+  font-size: 88%;
+  line-height: 1.5em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/services\/_wikipedia\.scss}line{font-family:\0000398}}
+#erutpa-main-component .erutpa-detail-component.eurtpa-wikipedia.erutpa-wikipedia caption {
+  font-weight: bold;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/services\/_wikipedia\.scss}line{font-family:\00003102}}
+#erutpa-main-component .erutpa-detail-component.eurtpa-wikipedia.erutpa-wikipedia .reflist, #erutpa-main-component .erutpa-detail-component.eurtpa-wikipedia.erutpa-wikipedia .refbegin {
+  -webkit-column-count: 1;
+  -moz-column-count: 1;
+  -ms-column-count: 1;
+  -o-column-count: 1;
+  column-count: 1;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/services\/_wikipedia\.scss}line{font-family:\00003105}}
+#erutpa-main-component .erutpa-detail-component.eurtpa-wikipedia.erutpa-wikipedia .reflist ol, #erutpa-main-component .erutpa-detail-component.eurtpa-wikipedia.erutpa-wikipedia .reflist ul, #erutpa-main-component .erutpa-detail-component.eurtpa-wikipedia.erutpa-wikipedia .refbegin ol, #erutpa-main-component .erutpa-detail-component.eurtpa-wikipedia.erutpa-wikipedia .refbegin ul {
+  font-size: 12px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\000035}}
+.erutpa-learn-more-button-container {
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\000037}}
+.erutpa-learn-more-button-container .erutpa-learn-more-button {
+  position: absolute;
+  top: -23px;
+  right: -105px;
+  content: "Learn more";
+  font-size: 16px;
+  border: 2px solid #EEE;
+  border-radius: 7px;
+  padding: 6px;
+  background-color: #EEE;
+  box-shadow: 2px 3px 13px -5px #242424;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\0000326}}
+.erutpa-learn-more-button-container .erutpa-learn-more-button:hover {
+  cursor: pointer;
+  box-shadow: 2px 3px 23px -5px #242424;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\0000333}}
+#erutpa-main-component {
+  display: none;
+  font-size: 14px;
+  line-height: 18px;
+  top: 0px;
+  position: absolute;
+  z-index: 1000;
+  width: 400px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\0000342}}
+#erutpa-main-component.show {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\0000346}}
+#erutpa-main-component .erutpa-main-component-close-button {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-transform: translateZ(1px);
+  -moz-transform: translateZ(1px);
+  -ms-transform: translateZ(1px);
+  -o-transform: translateZ(1px);
+  transform: translateZ(1px);
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 25px;
+  height: 25px;
+  top: -10px;
+  right: -10px;
+  border-radius: 15px;
+  color: white;
+  text-align: center;
+  line-height: 25px;
+  font-size: 11px;
+  box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\0000364}}
+#erutpa-main-component .erutpa-main-component-close-button:hover {
+  -webkit-transform: translateZ(1px) scale(1.1);
+  -moz-transform: translateZ(1px) scale(1.1);
+  -ms-transform: translateZ(1px) scale(1.1);
+  -o-transform: translateZ(1px) scale(1.1);
+  transform: translateZ(1px) scale(1.1);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\0000368}}
+#erutpa-main-component .erutpa-keyword-card {
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.29804) 0px 0px 21px 16px;
+  position: absolute;
+  width: 400px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\0000375}}
+#erutpa-main-component .erutpa-keyword-card-bottom-bar {
+  height: 25px;
+  background-color: white;
+  padding: 0px 6px;
+  box-shadow: 0px -5px 10px 1px rgba(0, 0, 0, 0.3);
+  line-height: 25px;
+  font-weight: bold;
+  -webkit-transform: translateZ(0px);
+  -moz-transform: translateZ(0px);
+  -ms-transform: translateZ(0px);
+  -o-transform: translateZ(0px);
+  transform: translateZ(0px);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\0000385}}
+#erutpa-main-component .erutpa-keyword-card-header {
+  box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  cursor: move;
+  -webkit-transform: translateZ(1px);
+  -moz-transform: translateZ(1px);
+  -ms-transform: translateZ(1px);
+  -o-transform: translateZ(1px);
+  transform: translateZ(1px);
+  height: 60px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\0000393}}
+#erutpa-main-component .erutpa-keyword-card-header span.back {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAA6klEQVQ4T62UwQ3CIBSGy6F3R+DSs+0GdhLjCG7iCI6gE1g38A4H3aDcSfB/BoyxFB4JXJpC+Pj///EQTeUhKvOaJLDrujMO3DvnZiHEUSlF/8kRBUopN23b3rCzD7sJaq0dnhgp4gIYg/1AR631xAZmYC8o7CFwZgEzMIMMd8jwwcowBSMA8rvgk4PdKY5PhqGaudMZ6wdREUZO5tpAU99yyAXWKfRtLCdYuTKKMn2LQhBfabq0C6hvvZF9bYKqFJQUAjjkKr3WemtKy1ovpRS2DVpPslvv34q3f8I8PV9lrZfLpWS9+ov9BnlHf2rLQ10LAAAAAElFTkSuQmCC);
+  float: left;
+  width: 0px;
+  height: 0px;
+  margin-top: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+  cursor: pointer;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\00003104}}
+#erutpa-main-component .erutpa-keyword-card-header span.back.show {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  -webkit-transform: rotateZ(360deg);
+  -moz-transform: rotateZ(360deg);
+  -ms-transform: rotateZ(360deg);
+  -o-transform: rotateZ(360deg);
+  transform: rotateZ(360deg);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\00003114}}
+#erutpa-main-component .erutpa-keyword-card-header .erutpa-keyword-card-keyword-input {
+  margin: 15px 0;
+  padding-left: 14px;
+  line-height: 30px;
+  font-size: 23px;
+  font-family: HelveticaNeue-Light;
+  font-weight: normal;
+  text-align: left;
+  width: 300px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\00003124}}
+#erutpa-main-component .erutpa-keyword-card-header .erutpa-keyword-card-keyword-input:hover, #erutpa-main-component .erutpa-keyword-card-header .erutpa-keyword-card-keyword-input:focus {
+  box-shadow: inset 2px 2px 7px 2px rgba(0, 0, 0, 0.5);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\00003130}}
+#erutpa-main-component .erutpa-keyword-card-canvas {
+  margin: 0px;
+  background-color: #EFEFEF;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  box-shadow: inset 0px 0px 13px 3px rgba(0, 0, 0, 0.3);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\00003137}}
+#erutpa-main-component .erutpa-keyword-card-canvas .erutpa-keyword-card-result-item {
+  background-color: white;
+  overflow: hidden;
+  margin: 14px 2px;
+  overflow: hidden;
+  *zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\00003143}}
+#erutpa-main-component .erutpa-keyword-card-canvas .erutpa-keyword-card-result-item p {
+  font-size: 13px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\00003149}}
+#erutpa-main-component .erutpa-keyword-card-subview {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 12px;
+  width: 400px;
+  display: inline-block;
+  white-space: normal;
+  display: inline-block;
+  max-height: 500px;
+  margin-top: 0.675%;
+  box-sizing: border-box;
+  max-width: 1000000px;
+  vertical-align: top;
+  border-radius: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/nambrot\/devstufff\/erutpa\/app\/styles\/content\.scss}line{font-family:\00003166}}
+#erutpa-main-component .erutpa-detail-component {
+  box-shadow: rgba(0, 0, 0, 0.04706) 0px 2px 3px 0px;
+  background: white;
+  text-align: left;
+  padding: 12px;
+}
