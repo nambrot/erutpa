@@ -1,5 +1,5 @@
 define ['react', 'components/keyword_card', 'models/keyword_collection', 'underscore', 'utils/backbone_mixin', 'jquery', 'utils/pep'], (React, KeywordCard, KeywordCollection, _, BackboneMixin, $, pep) ->
-  {div} = React.DOM
+  {div, span} = React.DOM
   MainComponent = React.createClass
     mixins: [BackboneMixin]
 
@@ -12,9 +12,10 @@ define ['react', 'components/keyword_card', 'models/keyword_collection', 'unders
       domNode = $(@getDOMNode())
       $('body').on 'click.erutpa', (evt) =>
         @removeErutpa() unless domNode.has(evt.target).length > 0
+        true
     removeErutpa: ->
       @props.collection.reset []
-
+      return false
     #move component into view port, ideally close to mouse position
     moveComponentToMousePosition: (evt) ->
       windowWidth = $(window).width()
@@ -41,4 +42,4 @@ define ['react', 'components/keyword_card', 'models/keyword_collection', 'unders
     render: ->
       (div className: (if @props.collection.length > 0 then "show" else ""), id: "erutpa-main-component", _.map(@props.collection.models, (keyword) ->
         (KeywordCard model: keyword)
-        ))
+        ).concat((span className: 'erutpa-main-component-close-button', onClick: @removeErutpa, 'X')))

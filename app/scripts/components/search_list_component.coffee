@@ -10,7 +10,6 @@ define ['react', 'utils/backbone_mixin', 'underscore'], (React, BackboneMixin, _
 
     render: ->
       searchesWithResults = @props.model.searches.thatHaveResults()
-      console.log @props.model.searches, searchesWithResults
       if searchesWithResults.length > 0
         (div className: "erutpa-keyword-card-search-list", searchesWithResults.map (search) => 
                 (search.component model: search, addSubview: @props.addSubview)

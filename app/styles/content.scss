@@ -37,11 +37,34 @@
   top: 0px;
   position: absolute;
   z-index: 1000;
+  width: 400px;
 
   &.show {
     display: block;
   }
   
+  .erutpa-main-component-close-button {
+    @include transition(all 0.3s ease-in-out);
+    @include transform(translateZ(1px));
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 25px;
+    height: 25px;
+    top: -10px;
+    right: -10px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    line-height: 25px;
+    font-size: 11px;
+    box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.3);
+    cursor: pointer;
+    
+
+    &:hover {
+      @include transform(translateZ(1px) scale(1.1))
+    }
+  }
   .erutpa-keyword-card {
     overflow: hidden;
     box-shadow: rgba(0, 0, 0, 0.29804) 0px 0px 21px 16px;
