@@ -64,7 +64,8 @@ define [
         @fetched()
 
     canHandleLink: (link) ->
-      this
+      return this if link.match /\/\/en\.wikipedia\.org\/wiki\//
+      false
 
     # return false if not, searchResult if
     getSearchResultFromLink: (link) ->

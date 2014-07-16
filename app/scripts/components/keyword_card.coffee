@@ -35,7 +35,7 @@ define ['react', 'utils/backbone_mixin', 'underscore', 'components/search_list_c
             console.log error
           false
         else
-          false
+          true
 
     addSubview: (subview) ->
       # we have to wrap in a function to avoid it getting moounted earlier
