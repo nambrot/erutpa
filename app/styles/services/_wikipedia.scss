@@ -1,6 +1,6 @@
 #erutpa-main-component {
   .erutpa-keyword-card-search-card {
-    box-shadow: rgba(0, 0, 0, 0.0470588) 0px 2px 3px 0px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 9px 3px;
     background: white;
     text-align: left;
     
@@ -8,6 +8,10 @@
 
       .erutpa-wikipedia-search-result-snippet {
         padding: 15px;
+        cursor: pointer;
+        &:hover {
+          background-color: rgba(0,0,0,0.01);
+        }
       }
 
       img {
@@ -37,7 +41,7 @@
     }
   }
 
-  .erutpa-detail-component.eurtpa-wikipedia {
+  .erutpa-detail-component.erutpa-wikipedia {
     &.erutpa-wikipedia {
       p {
         font-size: 14px;
