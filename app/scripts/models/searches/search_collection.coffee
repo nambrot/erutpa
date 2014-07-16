@@ -1,4 +1,4 @@
-define ['models/searches/search', 'services/wikipedia/wikipedia_search', 'backbone'], (Search, WikipediaSearch, Backbone) ->
+define ['models/searches/search', 'services/default_searches', 'backbone'], (Search, defaultSearches, Backbone) ->
   class SearchCollection extends Backbone.Collection
     # gets initialized with keyword
     # keyword: Keyword
@@ -15,5 +15,6 @@ define ['models/searches/search', 'services/wikipedia/wikipedia_search', 'backbo
       _.filter @models, (model) -> (model.fetchingStatus == "fetching")
 
     searchDefault: ->
-      @add new WikipediaSearch
+      defaultSearches.forEach (search) => 
+        @add new search
       @each (model) -> model.fetch()
