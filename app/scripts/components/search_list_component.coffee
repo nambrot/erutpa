@@ -7,7 +7,8 @@ define ['react', 'utils/backbone_mixin', 'underscore'], (React, BackboneMixin, _
         (span {}, "Searching for #{@props.model.get('keyword')}")
       else
         (span {}, "Search Results for #{@props.model.get('keyword')}")
-
+    title: ->
+      @props.model.get 'keyword'
     render: ->
       searchesWithResults = @props.model.searches.thatHaveResults()
       if searchesWithResults.length > 0

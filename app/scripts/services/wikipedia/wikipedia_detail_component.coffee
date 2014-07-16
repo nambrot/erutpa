@@ -5,6 +5,8 @@ define ['react', 'utils/backbone_mixin', 'underscore'], (React, BackboneMixin, _
     mixins: [BackboneMixin]
     titleView: ->
       (a href: @props.model.get('fullurl'), @props.model.get('title') )
+    title: ->
+      @props.model.get('title')
     render: ->
       if @props.model.get("text")
         (div className: 'erutpa-detail-component erutpa-wikipedia', dangerouslySetInnerHTML: {__html: @props.model.get("text")})

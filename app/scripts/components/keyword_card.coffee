@@ -42,12 +42,12 @@ define ['react', 'utils/backbone_mixin', 'underscore', 'components/search_list_c
       subview = subview()
       subviews = @state.subviews
       subviews.push subview
-      @setState subviews: subviews
+      @setState subviews: subviews, keyword: subview.title()
       return false
     popSubview: ->
       subviews = @state.subviews
       subviews.pop()
-      @setState subviews: subviews
+      @setState subviews: subviews, keyword: _.last(subviews).title()
     resetSubviews: ->
       @setState subviews: [(SearchListComponent model: @props.model, addSubview: @addSubview)]
 
