@@ -38,6 +38,8 @@ define [
     
     # should reference the component to display the result
     component: WikipediaDetailComponent
+    title: ->
+      @get('title')
     initialize: ->
       @fetch()
     fetch: ->

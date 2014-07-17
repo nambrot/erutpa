@@ -1,4 +1,13 @@
-define ['react', 'components/keyword_card', 'models/keyword_collection', 'underscore', 'utils/backbone_mixin', 'jquery', 'utils/pep'], (React, KeywordCard, KeywordCollection, _, BackboneMixin, $, pep) ->
+define [
+  'react',
+  'components/keyword_card',
+  'models/keyword_collection',
+  'underscore',
+  'utils/backbone_mixin',
+  'jquery',
+  'utils/pep',
+  'services/default_searches'
+  ], (React, KeywordCard, KeywordCollection, _, BackboneMixin, $, pep, DefaultSearches) ->
   {div, span} = React.DOM
   MainComponent = React.createClass
     mixins: [BackboneMixin]
@@ -13,9 +22,32 @@ define ['react', 'components/keyword_card', 'models/keyword_collection', 'unders
       $('body').on 'click.erutpa', (evt) =>
         @removeErutpa() unless domNode.has(evt.target).length > 0
         true
+
+      @eruptifyLinks()
+
+    getHandlingSearchFromLink: (link) ->
+      _.chain DefaultSearches
+        .map (search) -> ( new search().canHandleLink(link) )
+        .find (val) -> (val)
+        .value()
+    eruptifyLink: (link, search) ->
+      return if $(link).data('eruptified')
+      $(link).on 'click.erutpa', (evt) =>
+        search.getSearchResultFromLink link.href
+        .then (searchResult) =>
+          @addSearchResult searchResult, evt
+        #if getting searchResult fails, go to link
+        return false
+      $(link).data 'eruptified', true
+
+    eruptifyLinks: ->
+      $('body:not(#erutpa-main-component) a').each (idx, val) =>
+        search = @getHandlingSearchFromLink val.href
+        @eruptifyLink(val, search) if search
     removeErutpa: ->
       @props.collection.reset []
       return false
+
     #move component into view port, ideally close to mouse position
     moveComponentToMousePosition: (evt) ->
       windowWidth = $(window).width()
@@ -34,6 +66,11 @@ define ['react', 'components/keyword_card', 'models/keyword_collection', 'unders
 
     getDefaultProps: ->
       collection: new KeywordCollection([])
+
+    addSearchResult: (searchResult, evt) ->
+      @props.collection.add keyword: searchResult.title()
+      @moveComponentToMousePosition(evt)
+
     addKeyword: (keyword, evt) ->
       @props.collection.add keyword: keyword
       if @props.collection.length == 1

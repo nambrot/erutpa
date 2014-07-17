@@ -7,5 +7,7 @@ define ['backbone'], (Backbone) ->
     # should reference the component to display the result
     # component: "SearchResultComponent"
 
+    # title
+
     # optionally fetch the full data needed to display
     # fetch: ->
