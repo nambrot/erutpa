@@ -55,6 +55,7 @@
       .ambox {
         display: none;
       }
+
       .hatnote {
         font-size: 14px;
         line-height: 19px;
@@ -68,6 +69,12 @@
           clear: right;
           float: right;
           margin: .5em 0 1.3em 1.4em;
+        }
+
+        &.tleft {
+          clear: left;
+          float: left;
+          margin: 0 1em 1em 0;
         }
 
         .thumbinner {
@@ -109,6 +116,10 @@
         ol, ul {
           font-size: 12px;
         }
+      }
+
+      #coordinates {
+        display: none;
       }
     }
   }
