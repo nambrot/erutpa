@@ -68,7 +68,7 @@ define [
       collection: new KeywordCollection([])
 
     addSearchResult: (searchResult, evt) ->
-      @props.collection.add keyword: searchResult.title()
+      @props.collection.add keyword: searchResult.title(), initialSubviews: [new searchResult.component model: searchResult]
       @moveComponentToMousePosition(evt)
 
     addKeyword: (keyword, evt) ->
@@ -78,5 +78,5 @@ define [
     
     render: ->
       (div className: (if @props.collection.length > 0 then "show" else ""), id: "erutpa-main-component", _.map(@props.collection.models, (keyword) ->
-        (KeywordCard model: keyword)
+        (KeywordCard model: keyword, initialSubviews: keyword.get('initialSubviews'))
         ).concat((span className: 'erutpa-main-component-close-button', onClick: @removeErutpa, 'X')))

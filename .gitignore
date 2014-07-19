@@ -20,7 +20,7 @@ app/scripts/**/*.js
 app/scripts/contentscript.js.map
 !app/scripts/utils/*.js
 app/styles/content.css
-
+/package
 ## Environment normalisation:
 /.bundle
 /vendor/bundle

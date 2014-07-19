@@ -4,9 +4,14 @@ define ['react', 'utils/backbone_mixin', 'underscore', 'components/search_list_c
   KeywordCard = React.createClass
     # model: Keyword
     mixins: [BackboneMixin]
-
+    initialSubviews: ->
+      debugger
+      subviews = @props.initialSubviews || []
+      subviews.unshift (SearchListComponent model: @props.model, addSubview: @addSubview)
+      subviews
+      
     getInitialState: ->
-      subviews: [(SearchListComponent model: @props.model, addSubview: @addSubview)]
+      subviews: @initialSubviews()
       keyword: @props.model.get('keyword')
     onChange: (evt) ->
       @setState keyword: evt.target.value
