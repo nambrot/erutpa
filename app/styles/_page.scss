@@ -1,0 +1,31 @@
+.eruptified {
+  margin-left: 3px;
+  display: inline-block;
+  width: 12px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  @include transition(all 0.2 ease);
+
+  &:hover {
+
+    @include transform(scale(1.2));
+
+    &:after {
+      line-height: 16px;
+      font-size: 12px;
+      content: "Learn More";
+      padding: 2px 9px;
+      position: absolute;
+      white-space: nowrap;
+      margin-top: -19px;
+      margin-left: 9px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      border-radius: 4px;
+      box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.3);
+      font-weight: lighter;
+    }
+  }
+}

@@ -5,7 +5,6 @@ define ['react', 'utils/backbone_mixin', 'underscore', 'components/search_list_c
     # model: Keyword
     mixins: [BackboneMixin]
     initialSubviews: ->
-      debugger
       subviews = @props.initialSubviews || []
       subviews.unshift (SearchListComponent model: @props.model, addSubview: @addSubview)
       subviews

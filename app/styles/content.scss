@@ -1,20 +1,24 @@
 @import "reset";
 @import "compass";
+@import "page";
 @import "services/wikipedia";
 
 .erutpa-learn-more-button-container {
   position: relative;
   .erutpa-learn-more-button {
+    font-size: 14px;
+    line-height: 20px;
+    content: "Learn More";
+    padding: 2px 9px;
     position: absolute;
-    top: -23px;
-    right: -105px;
-    content: "Learn more";
-    font-size: 16px;
-    border: 2px solid #EEE;
-    border-radius: 7px;
-    padding: 6px;
-    background-color: #EEE;
-    box-shadow: 2px 3px 13px -5px #242424;
+    white-space: nowrap;
+    margin-top: -19px;
+    margin-left: 9px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.3);
+    font-weight: lighter;
 
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -23,6 +27,7 @@
     -ms-user-select: none;
     user-select: none;
     
+    white-space: nowrap;
     &:hover {
       cursor: pointer;
       box-shadow: 2px 3px 23px -5px #242424;      

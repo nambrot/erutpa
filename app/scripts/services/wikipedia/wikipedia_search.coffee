@@ -56,6 +56,8 @@ define [
     # should reference the component to display the result
     component: WikipediaSearchComponent
     searchResultModel: WikipediaSearchResult
+    canonicalCSSClass: 'erutpa-wikipedia'
+
     # should fetch the relevant information
     fetch: ->
       @fetching()

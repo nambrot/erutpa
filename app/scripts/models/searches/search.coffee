@@ -9,8 +9,7 @@ define [
     
     # keyword is accesible via @collection.keyword
     
-    # should reference the component to display the result in a search list
-    # component: Component
+    
     
     fetchingStatus: "notYet" # among ["notYet", "fetched", "fetching"]
 
@@ -31,6 +30,13 @@ define [
 
 
     # ------- TO SUBCLASS ----------
+
+    # should reference the component to display the result in a search list
+    # component: Component
+
+    # an identifying class for customization
+    canonicalCSSClass: ''
+
     # specifies the canonical item
     searchResultModel: SearchResult
 

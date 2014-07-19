@@ -32,7 +32,8 @@ define [
         .value()
     eruptifyLink: (link, search) ->
       return if $(link).data('eruptified')
-      $(link).on 'click.erutpa', (evt) =>
+      $(link).append "<span class='eruptified #{search.canonicalCSSClass}'>&nbsp;</span>"
+      $(link).on 'click.erutpa', '.eruptified', (evt) =>
         search.getSearchResultFromLink link.href
         .then (searchResult) =>
           @addSearchResult searchResult, evt
@@ -41,7 +42,7 @@ define [
       $(link).data 'eruptified', true
 
     eruptifyLinks: ->
-      $('body:not(#erutpa-main-component) a').each (idx, val) =>
+      $('body:not(#erutpa-main-component) a:not(:has(*))').each (idx, val) =>
         search = @getHandlingSearchFromLink val.href
         @eruptifyLink(val, search) if search
     removeErutpa: ->
