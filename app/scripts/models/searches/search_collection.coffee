@@ -18,3 +18,7 @@ define ['models/searches/search', 'services/default_searches', 'backbone'], (Sea
       defaultSearches.forEach (search) => 
         @add new search
       @each (model) -> model.fetch()
+
+    addSearch: (search, fetch = true) ->
+      @add search
+      search.fetch() if fetch

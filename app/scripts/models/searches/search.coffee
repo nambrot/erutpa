@@ -1,15 +1,17 @@
 define [
   'backbone', 
   'models/searches/search_result_collection', 
-  'models/searches/search_result'
-  ], (Backbone, SearchResultCollection, SearchResult) ->
+  'models/searches/search_result',
+  'components/search_component',
+  ], (Backbone, SearchResultCollection, SearchResult, SearchComponent) ->
 
   # Defines the common interface for search results based on a keyword
   class Search extends Backbone.Model
     
     # keyword is accesible via @collection.keyword
-    
-    
+    # set 'q' if you have a more specific keyword
+    keyword: ->
+      @get('q') || @collection.keyword.get('keyword')
     
     fetchingStatus: "notYet" # among ["notYet", "fetched", "fetching"]
 
@@ -21,9 +23,11 @@ define [
       @fetchingStatus = "fetched"
       @trigger "fetched change"
 
-    initialize: (options) ->
+    initialize: (attrs, options) ->
+      options = options || {}
       super options
-      @searchResults = new SearchResultCollection [], search: this
+      searchResults = options.searchResults || []
+      @searchResults = new SearchResultCollection searchResults, search: this
       , model: @searchResultModel
       @searchResults.on 'change reset add remove', =>
         @trigger 'change'
@@ -32,10 +36,10 @@ define [
     # ------- TO SUBCLASS ----------
 
     # should reference the component to display the result in a search list
-    # component: Component
+    component: SearchComponent
 
     # an identifying class for customization
-    canonicalCSSClass: ''
+    canonicalCSSClass: 'erutpa-search'
 
     # specifies the canonical item
     searchResultModel: SearchResult

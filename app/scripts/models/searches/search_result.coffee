@@ -5,7 +5,8 @@ define ['backbone'], (Backbone) ->
     # ------- TO SUBCLASS ----------
     
     # should reference the component to display the result
-    # component: "SearchResultComponent"
+    # component: DetailComponent
+    # searchComponent: SearchComponent
 
     # title
 

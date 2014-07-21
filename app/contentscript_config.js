@@ -8,7 +8,8 @@ require.config({
     underscore: '../bower_components/underscore/underscore',
     backbone: '../bower_components/backbone/backbone',
     jsonp: '../bower_components/jsonp/jsonp',
-    q: '../bower_components/q/q'
+    q: '../bower_components/q/q',
+    leaflet: '../bower_components/leaflet/dist/leaflet'
   },
   packages: [
 

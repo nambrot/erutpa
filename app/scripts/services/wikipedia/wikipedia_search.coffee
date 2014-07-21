@@ -6,8 +6,9 @@ define [
   'models/searches/search_result'
   'q',
   'services/wikipedia/wikipedia_detail_component',
-  'services/wikipedia/wikipedia_search_component'
-  ], (Backbone, $, Search, SearchResult, Q, WikipediaDetailComponent, WikipediaSearchComponent) ->
+  'services/wikipedia/wikipedia_search_component',
+  'services/dbpedia/dbpedia_search'
+  ], (Backbone, $, Search, SearchResult, Q, WikipediaDetailComponent, WikipediaSearchComponent, DbpediaSearch) ->
   Wikipedia =
     query: (q) ->
       deferred = Q.defer()
@@ -20,14 +21,16 @@ define [
 
     parse: (link) ->
       deferred = Q.defer()
-      title = link.match(/\/\/en.wikipedia.org\/wiki\/(.*)/)[1]
-      $.getJSON "https://en.wikipedia.org/w/api.php?action=parse&format=json&page=#{escape(title)}&redirects=&prop=text&disableeditsection=", (evt) ->
+      id = link.match(/\/\/en.wikipedia.org\/wiki\/(.*)/)[1]
+      $.getJSON "https://en.wikipedia.org/w/api.php?action=parse&format=json&page=#{escape(id)}&redirects=&prop=text&disableeditsection=", (evt) ->
         if evt.error
           deferred.reject evt.error
         else
           text = evt.parse.text["*"]
           text = text.replace /<a href="\/w/g, '<a href="//en.wikipedia.org/w'
-          deferred.resolve text: text, title: title, fullurl: link
+          title = id.replace /_/g, " "
+
+          deferred.resolve text: text, id: id, fullurl: link, title: title
 
       deferred.promise
   
@@ -64,6 +67,9 @@ define [
       Wikipedia.query @collection.keyword.get('keyword')
       .then (results) =>
         @searchResults.add results
+        # if @searchResults.length > 0 and @collection and @collection.keyword?
+          # dbpedia_search = new DbpediaSearch q: @searchResults.at(0).title()
+          # @collection.addSearch dbpedia_search
       .fin =>
         @fetched()
 
