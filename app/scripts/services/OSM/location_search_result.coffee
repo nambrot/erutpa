@@ -23,9 +23,9 @@ define [
       "Title"
 
     lat: ->
-      @attributes.dbpediaData.data["http://www.w3.org/2003/01/geo/wgs84_pos#lat"][0].value
+      @attributes.dbpediaData.data["http://dbpedia.org/property/latitude"][0].value || @attributes.dbpediaData.data["http://www.w3.org/2003/01/geo/wgs84_pos#lat"][0].value
     lng: ->
-      @attributes.dbpediaData.data["http://www.w3.org/2003/01/geo/wgs84_pos#long"][0].value
+      @attributes.dbpediaData.data["http://dbpedia.org/property/longitude"][0].value || @attributes.dbpediaData.data["http://www.w3.org/2003/01/geo/wgs84_pos#lng"][0].value
 
     initialize: ->
 

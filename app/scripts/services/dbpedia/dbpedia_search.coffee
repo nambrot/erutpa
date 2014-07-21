@@ -17,7 +17,6 @@ define [
         deferred = Q.defer()
         console.log url
         $.getJSON url, (resp) ->
-          console.log resp
           deferred.resolve data: resp[url], types: resp[url]["http://www.w3.org/1999/02/22-rdf-syntax-ns#type"].map((val) -> (val.value))
         deferred.promise
 
