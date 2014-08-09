@@ -45,7 +45,7 @@ define [
       area = @attributes.dbpediaData.data["http://dbpedia.org/ontology/areaTotal"][0].value if @attributes.dbpediaData.data["http://dbpedia.org/ontology/areaTotal"]
       return Math.log(133315101.0 / Math.sqrt(area)) / Math.log(2) if area
 
-      return 12 if _.any @attributes.dbpediaData.types, (type) -> ( _.contains ["http://dbpedia.org/ontology/Building","http://schema.org/LandmarksOrHistoricalBuildings","http://schema.org/StadiumOrArena","http://dbpedia.org/ontology/ArchitecturalStructure"], type)
+      return 12 if _.any @attributes.dbpediaData.types, (type) -> ( _.contains ["http://dbpedia.org/ontology/Building","http://schema.org/LandmarksOrHistoricalBuildings","http://schema.org/StadiumOrArena","http://dbpedia.org/ontology/ArchitecturalStructure", "http://schema.org/Organization"], type)
       return 8
     zoomLevel: ->
       zL = parseInt @getZoomLevel()

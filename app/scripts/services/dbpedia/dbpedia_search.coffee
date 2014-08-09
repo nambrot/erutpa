@@ -27,7 +27,12 @@ define [
             # for now, only pick the first one
             Dbpedia.get searchResults[0].uri
           .then (result) =>
-            if result.types.indexOf("http://schema.org/Place") != -1
+            locationAttributes = [
+              "http://www.w3.org/2003/01/geo/wgs84_pos#lat",
+              "http://dbpedia.org/property/latitude",
+              "http://dbpedia.org/property/latD"
+            ]
+            if result.types.indexOf("http://schema.org/Place") != -1 or _.any(locationAttributes, (attr) -> (_.has(result.data, attr)))
               if @collection
                 locationSearchResult = new LocationSearchResult dbpediaData: result
                 @collection.addSearch(new Search {}, searchResults: [locationSearchResult])
