@@ -15,7 +15,6 @@ define [
         deferred.promise
       get: (url) ->
         deferred = Q.defer()
-        console.log url
         $.getJSON url, (resp) ->
           deferred.resolve data: resp[url], types: resp[url]["http://www.w3.org/1999/02/22-rdf-syntax-ns#type"].map((val) -> (val.value))
         deferred.promise
@@ -28,9 +27,7 @@ define [
             # for now, only pick the first one
             Dbpedia.get searchResults[0].uri
           .then (result) =>
-            console.log result
             if result.types.indexOf("http://schema.org/Place") != -1
-              console.log 'is a place'
               if @collection
                 locationSearchResult = new LocationSearchResult dbpediaData: result
                 @collection.addSearch(new Search {}, searchResults: [locationSearchResult])

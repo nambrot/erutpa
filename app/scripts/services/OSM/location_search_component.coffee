@@ -5,7 +5,8 @@ define ['react', 'utils/backbone_mixin', 'underscore', 'leaflet', 'services/OSM/
     mixins: [BackboneMixin]
     componentDidMount: ->
       map = L.map @refs.mapEl.getDOMNode(), zoomControl: false, dragging: false, touchZoom: false, scrollWheelZoom: false, doubleClickZoom: false, boxZoom: false
-        .setView([@props.model.lat(), @props.model.lng()], 13)
+        .setView([@props.model.lat(), @props.model.lng()], @props.model.zoomLevel())
+
       L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
           attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(map)
