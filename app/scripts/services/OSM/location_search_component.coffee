@@ -14,4 +14,8 @@ define ['react', 'utils/backbone_mixin', 'underscore', 'leaflet', 'services/OSM/
       @props.addSubview _.bind(LocationDetailComponent, this, model: @props.model)
       return false
     render: ->
-      (div className: "erutpa-location", ref: 'mapEl', style: { height: '200' }, onClick: @onClick )
+      (div className: "erutpa-location", [
+        (h5 className:'erutpa-keyword-card-search-card-title', "Map for #{@props.model.attributes.dbpediaData.data['http://dbpedia.org/property/name'][0].value}")
+        (div className: "", ref: 'mapEl', style: { height: '150' }, onClick: @onClick )
+        ])
+      
