@@ -14,4 +14,4 @@ define ['react', 'utils/backbone_mixin', 'underscore', 'leaflet'], (React, Backb
           attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(map)
     render: ->
-      (div className: "erutpa-Location", ref: 'mapEl', style: { height: '600' } )
+      (div className: "erutpa-Location no-erutpa-subiew-padding", ref: 'mapEl', style: { height: '600' } )

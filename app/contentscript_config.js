@@ -9,7 +9,8 @@ require.config({
     backbone: '../bower_components/backbone/backbone',
     jsonp: '../bower_components/jsonp/jsonp',
     q: '../bower_components/q/q',
-    leaflet: '../bower_components/leaflet/dist/leaflet'
+    leaflet: '../bower_components/leaflet/dist/leaflet',
+    mediaelement: '../bower_components/mediaelement/build/mediaelement'
   },
   packages: [
 

@@ -3,6 +3,7 @@
 @import "page";
 @import "services/wikipedia";
 @import "services/OSM";
+@import "services/video";
 
 .erutpa-learn-more-button-container {
   position: relative;
@@ -158,7 +159,7 @@
     @include transition(all 0.2s ease);
     overflow-x: hidden;
     overflow-y: scroll;
-    padding: 12px;  
+    
     width: 400px;
     display: inline-block;
     white-space: normal;
@@ -168,7 +169,14 @@
     box-sizing: border-box;
     max-width: 1000000px;
     vertical-align: top;
-    border-radius: 12px;
+
+    & > * {
+      margin: 12px;
+    }
+
+    & > .no-erutpa-subiew-padding {
+      margin: 0;
+    }
   }
 
   .erutpa-detail-component {
