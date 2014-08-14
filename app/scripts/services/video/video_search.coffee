@@ -8,14 +8,14 @@ define [
   'q'
   ], (Backbone, $, Search, SearchResult, VideoDetailComponent, Q) ->
     
-    matchingRegex = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/
+    matchingRegex = /((youtube\.com|youtu.be).*(v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*|youtu.be([^#\&\?]*))/
 
     class VideoSearchResult extends SearchResult
       # should reference the component to display the result
       component: VideoDetailComponent
       getIframeUrl: ->
         match = @get('link').match matchingRegex
-        youtube_id = match[2] if match && (match[2].length is 11)
+        youtube_id = match[4] or match[5] if match and ((match[4].length is 11) or (match[5].length is 11))
         "//www.youtube.com/embed/#{youtube_id}?autohide=1&controls=0"
       title: ->
         "Youtube Video"
@@ -28,6 +28,7 @@ define [
       canonicalCSSClass: 'erutpa-video'
 
       canHandleLink: (link) ->
+
         return this if link.match matchingRegex
         false
 
