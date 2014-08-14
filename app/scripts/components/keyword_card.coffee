@@ -55,10 +55,13 @@ define ['react', 'utils/backbone_mixin', 'underscore', 'components/search_list_c
     resetSubviews: ->
       @setState subviews: [(SearchListComponent model: @props.model, addSubview: @addSubview)]
 
+    shouldShowBackArrow: ->
+      @props.model.searches.thatHaveResults().length > 0 and @state.subviews.length > 1
+
     render: ->
       (article className: 'erutpa-keyword-card', [
         (header className: 'erutpa-keyword-card-header', [
-          (span className: (if @state.subviews.length > 1 then "show back" else "back"), onClick: @popSubview),
+          (span className: (if @shouldShowBackArrow() then "show back" else "back"), onClick: @popSubview),
           (input className: "erutpa-keyword-card-keyword-input", ref: 'keywordInput', value: @state.keyword, onChange: @onChange, onKeyUp: @onKeyUp)
           ])
         (div className: 'erutpa-keyword-card-canvas', @state.subviews.map((subview, index) => 
