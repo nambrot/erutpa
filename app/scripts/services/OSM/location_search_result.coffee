@@ -18,7 +18,7 @@ define [
     
     # should reference the component to display the result
     component: LocationDetailComponent
-    searchComponent: LocationSearchComponent
+    searchResultComponent: LocationSearchComponent
     
     title: ->
       "Title"
