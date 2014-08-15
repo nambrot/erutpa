@@ -30,7 +30,8 @@ define [
             locationAttributes = [
               "http://www.w3.org/2003/01/geo/wgs84_pos#lat",
               "http://dbpedia.org/property/latitude",
-              "http://dbpedia.org/property/latD"
+              "http://dbpedia.org/property/latD",
+              "http://www.georss.org/georss/point"
             ]
             if result.types.indexOf("http://schema.org/Place") != -1 or _.any(locationAttributes, (attr) -> (_.has(result.data, attr)))
               if @collection

@@ -16,7 +16,7 @@ define [
       getIframeUrl: ->
         match = @get('link').match matchingRegex
         youtube_id = match[4] or match[5] if match and ((match[4].length is 11) or (match[5].length is 11))
-        "//www.youtube.com/embed/#{youtube_id}?autohide=1&controls=0"
+        "//www.youtube.com/embed/#{youtube_id}?autohide=1&controls=1"
       title: ->
         "Youtube Video"
 

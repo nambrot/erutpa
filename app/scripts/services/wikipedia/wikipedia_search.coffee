@@ -67,9 +67,9 @@ define [
       Wikipedia.query @collection.keyword.get('keyword')
       .then (results) =>
         @searchResults.add results
-        # if @searchResults.length > 0 and @collection and @collection.keyword?
-          # dbpedia_search = new DbpediaSearch q: @searchResults.at(0).title()
-          # @collection.addSearch dbpedia_search
+        if @searchResults.length > 0 and @collection and @collection.keyword?
+          dbpedia_search = new DbpediaSearch q: @searchResults.at(0).title()
+          @collection.addSearch dbpedia_search
       .fin =>
         @fetched()
 
