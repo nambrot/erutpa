@@ -1,9 +1,8 @@
-define ['react'], (React) ->
+define ['react', 'components/search_result_detail_component'], (React, SearchResultDetailComponent) ->
   {div, article, header, section, p, ul, li, h2, span} = React.DOM
   SearchListComponent = React.createClass
-    titleView: ->
-      (span {}, @title())
-    title: ->
-      "SearchResultComponent"
+    onClick: ->
+      @props.addSubview _.bind(SearchResultDetailComponent, this, model: @props.model)
+      return false
     render: ->
-      (div {}, "SearchResultComponent")
+      (div onClick: @onClick, "SearchResultComponent")

@@ -5,5 +5,5 @@ define ['react', 'utils/backbone_mixin', 'underscore'], (React, BackboneMixin, _
     mixins: [BackboneMixin]
     render: ->
       (div className: "erutpa-keyword-card-search-card #{@props.model.canonicalCSSClass}", @props.model.searchResults.map (searchResult) =>
-        (searchResult.searchComponent model: searchResult, addSubview: @props.addSubview)
+        (searchResult.searchResultComponent model: searchResult, addSubview: @props.addSubview)
         )
