@@ -1,0 +1,21 @@
+#erutpa-main-component {
+  .erutpa-images-strip {
+    outline: none;
+    width: 100%;
+    height: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+
+    img {
+      display: inline-block;
+      height: 95%;
+      margin-top: 0.675%;
+      max-width: 1000000px;
+      vertical-align: top;
+      width: auto;
+      margin-left: 2px;
+      margin-right: 2px;
+    }
+  }
+}

@@ -24,11 +24,18 @@ define ['q','jquery', 'underscore'], (Q, $, _) ->
 
       deferred.promise
 
-    getImages: (title)->
+    parseImageResponse: (resp) ->
+      _.chain(resp.query.pages).values().filter((a) -> a.imageinfo and a.imageinfo[0]).collect((a) -> a.imageinfo[0]).value()
+    getImages: (title, limit=50)->
       deferred = Q.defer()
-      $.getJSON "http://commons.wikimedia.org/w/api.php?action=query&prop=imageinfo&format=json&iiprop=comment%7Cparsedcomment%7Ccanonicaltitle%7Curl%7Cextmetadata&iilimit=10&iiurlheight=100&titles=#{escape title}&generator=images&gimlimit=10", (resp) ->
+      $.getJSON "http://commons.wikimedia.org/w/api.php?action=query&prop=imageinfo&format=json&iiprop=comment%7Cparsedcomment%7Ccanonicaltitle%7Curl%7Cextmetadata&iilimit=1&iiurlheight=100&titles=#{escape title}&generator=images&gimlimit=#{limit}", (resp) =>
         unless resp.query
-          deferred.resolve []
-          return
-        deferred.resolve _.chain(resp.query.pages).values().collect((a) -> a.imageinfo[0]).value()
+          #try via category
+          $.getJSON "https://commons.wikimedia.org/w/api.php?action=query&generator=categorymembers&gcmtype=file&gcmtitle=Category:#{escape title}&prop=info%7Cimageinfo&gcmlimit=#{limit}&iiprop=url&iiurlheight=100&format=json&iiprop=comment%7Cparsedcomment%7Ccanonicaltitle%7Curl%7Cextmetadata", (resp) =>
+            unless resp.query
+              deferred.resolve []
+            else
+              deferred.resolve @parseImageResponse resp
+        else
+          deferred.resolve @parseImageResponse resp
       deferred.promise
