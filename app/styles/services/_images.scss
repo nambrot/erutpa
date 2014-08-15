@@ -1,4 +1,8 @@
 #erutpa-main-component {
+
+  .erutpa-keyword-card-search-card.erutpa-images {
+    cursor: pointer;
+  }
   .erutpa-images-strip {
     outline: none;
     width: 100%;
@@ -16,6 +20,36 @@
       width: auto;
       margin-left: 2px;
       margin-right: 2px;
+      cursor: pointer;
     }
+  }
+
+  .erutpa-images-grid {
+    margin: 0 auto;
+
+    .erutpa-images-grid-image {
+      display: inline-block;
+      float: left;
+      width: 30%;
+      margin: 1%;
+      height: 100px;
+      cursor: pointer;
+    }
+  }
+
+  .erutpa-image-detail-component {
+    img {
+      max-height: 400px;
+      display: inline-block;
+      display: inherit;
+      margin: 0 auto;
+    }
+    .erutpa-image-detail-component-meta {
+      box-shadow: rgba(0, 0, 0, 0.29804) 0px 0px 12px 0px;
+      background: white;
+      padding: 8px;
+      margin: 12px;
+    }
+    
   }
 }
