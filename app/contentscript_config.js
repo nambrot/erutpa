@@ -10,7 +10,8 @@ require.config({
     jsonp: '../bower_components/jsonp/jsonp',
     q: '../bower_components/q/q',
     leaflet: '../bower_components/leaflet/dist/leaflet',
-    mediaelement: '../bower_components/mediaelement/build/mediaelement'
+    mediaelement: '../bower_components/mediaelement/build/mediaelement',
+    moment: '../bower_components/momentjs/moment'
   },
   packages: [
 

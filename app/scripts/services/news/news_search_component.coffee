@@ -22,6 +22,7 @@ define ['react', 'utils/backbone_mixin', 'underscore', 'services/images/image_de
       (article className: 'erutpa-news-search-result-item', onClick: @onClick, [
         (div className: "erutpa-news-thumbnail", style: { backgroundImage: "url(#{@props.model.get("enclosures")[0].uri})" }) if @props.model.get('enclosures') unless @props.titleOnly
         (h6 className: "#{if @props.titleOnly then "onlyTitle" else ""}", (a href: @props.model.get('url'), @props.model.get("title"))),
+        (h5 {}, "#{@props.model.get("source")} - #{@props.model.get("parsed_date").fromNow()}"),
         (p className: 'clamp-3', @props.model.get("summary")) unless @props.titleOnly
         ])
 
