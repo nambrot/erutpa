@@ -32,4 +32,4 @@ define [
       .then (images) =>
         if images.length > 0
           @searchResults.add images
-      @fetched()
+        @fetched()

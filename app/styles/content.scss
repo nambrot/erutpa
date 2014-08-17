@@ -5,6 +5,7 @@
 @import "services/OSM";
 @import "services/video";
 @import "services/images";
+@import "services/news";
 
 .erutpa-learn-more-button-container {
   position: relative;
@@ -206,8 +207,8 @@
 
     .erutpa-keyword-card-search-card-title {
       padding: 2px 12px;
-      height: 48px;
-      line-height: 48px;
+      height: 42px;
+      line-height: 42px;
       font-size: 18px;
       color: #525252;
     }
