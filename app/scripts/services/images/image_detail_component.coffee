@@ -10,7 +10,7 @@ define ['react', 'utils/backbone_mixin', 'underscore'], (React, BackboneMixin, _
     title: ->
       @model().get('canonicaltitle')
     titleView: ->
-      (a href: @model().get('title'), @title())
+      (a href: @model().get('url'), @title())
     artist: ->
       return @model().get('extmetadata').Artist.value if @model().get('extmetadata') and @model().get('extmetadata').Artist
       return "Unknown"
@@ -24,7 +24,7 @@ define ['react', 'utils/backbone_mixin', 'underscore'], (React, BackboneMixin, _
     render: ->
       (div className: 'erutpa-image-detail-component', [
         (div className: "erutpa-image-detail-component-image-container", [
-          (img src: @model().get('url')),
+          (img src: @model().thumbnail(400)),
           (span className: 'previous-button', onClick: @goToPreviousImage) if @previousImage()
           (span className: 'next-button', onClick: @goToNextImage) if @nextImage()
           ])

@@ -14,7 +14,10 @@ define [
     component: SearchResultComponent
     title: ->
       @get('canonicaltitle')
-
+    thumbnail: (width) ->
+      url = @get('url').replace(/\/commons\//, "/commons/thumb/") + "/#{width}px-" + @get('url').split('/')[@get('url').split('/').length-1]
+      url += '.png' if url.split('.')[url.split('.').length-1] is 'svg'
+      return url
   class ImageSearch extends Search
 
     # should reference the Keyword
