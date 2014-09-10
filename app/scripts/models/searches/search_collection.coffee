@@ -19,6 +19,9 @@ define ['models/searches/search', 'services/default_searches', 'backbone'], (Sea
         @add new search
       @each (model) -> model.fetch()
 
-    addSearch: (search, fetch = true) ->
-      @add search
+    addSearch: (search, fetch = true, index = -1) ->
+      if index != -1
+        @add search, at: index
+      else
+        @add search
       search.fetch() if fetch
