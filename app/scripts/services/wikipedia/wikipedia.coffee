@@ -9,6 +9,19 @@ define ['q','jquery', 'underscore'], (Q, $, _) ->
 
       deferred.promise
 
+    parseById: (id) ->
+      deferred = Q.defer()
+      $.getJSON "https://en.wikipedia.org/w/api.php?action=parse&format=json&pageid=#{escape(id)}&prop=text&disableeditsection=", (evt) ->
+        if evt.error
+          deferred.reject evt.error
+        else
+          text = evt.parse.text["*"]
+          text = text.replace /<a href="\/w/g, '<a href="//en.wikipedia.org/w'
+          title = evt.parse.title
+          link= "http://en.wikipedia.org/wiki/index.html?curid=#{id}"
+          deferred.resolve text: text, id: id, fullurl: link, title: title
+
+      deferred.promise
     parse: (link) ->
       deferred = Q.defer()
       id = link.match(/\/\/en.wikipedia.org\/wiki\/(.*)/)[1]
