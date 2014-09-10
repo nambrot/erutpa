@@ -4,9 +4,9 @@ define ['react', 'utils/backbone_mixin', 'underscore', 'leaflet'], (React, Backb
   LocationDetailComponent = React.createClass
     mixins: [BackboneMixin]
     title: ->
-      "Map for #{@props.model.attributes.dbpediaData.data['http://dbpedia.org/property/name'][0].value}"
+      "Map for #{@props.model.get('name')}"
     titleView: ->
-      (span {}, "Map for #{@props.model.attributes.dbpediaData.data['http://dbpedia.org/property/name'][0].value}")
+      (span {}, "Map for #{@props.model.get('name')}")
     componentDidMount: ->
       map = L.map @refs.mapEl.getDOMNode()
         .setView([@props.model.lat(), @props.model.lng()], 13)
