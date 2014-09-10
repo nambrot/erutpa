@@ -47,6 +47,7 @@ define [
     # should fetch the relevant information
     fetch: ->
       return unless @fetchingStatus is "notYet"
+      return if @fetchingStatus is "fetched"
       @fetching()
       # do the fetching
       @fetched()
