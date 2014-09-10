@@ -9,7 +9,7 @@ define ['react', 'utils/backbone_mixin', 'underscore', 'services/wikipedia/wikip
       (div className: 'erutpa-wikipedia-search-result-snippet', onClick: _.bind(@props.addSubview, this, _.bind(WikipediaDetailComponent, this, model: @props.model)), [
         (image)
         (h5 {}, @props.model.get("title"))
-        (p {}, @props.model.get("extract"))
+        (p {}, @props.model.get("extract").substr(0, 300) + "...")
         ])
   WikipediaSearchComponent = React.createClass
     mixins: [BackboneMixin]
