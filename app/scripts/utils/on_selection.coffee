@@ -35,6 +35,15 @@ define ['jquery'], ($) ->
         if (window.getSelection && (sel = window.getSelection()).modify)
           sel = window.getSelection()
 
+          # cancel if we are in a contentedtiable window
+          if $(sel.focusNode).parents().map( ->
+            if $(this).is("[contenteditable='true']")
+              return true
+            else if $(this).is("[contenteditable='false']")
+              return false;
+          )[0]
+            return null
+
           if !sel.isCollapsed and sel.anchorNode.parentNode == sel.focusNode.parentNode
 
             # detect if selection is backwards

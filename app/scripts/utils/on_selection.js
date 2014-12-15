@@ -46,6 +46,15 @@
             selection_object = null;
             if (window.getSelection && (sel = window.getSelection()).modify) {
               sel = window.getSelection();
+              if ($(sel.focusNode).parents().map(function() {
+                if ($(this).is("[contenteditable='true']")) {
+                  return true;
+                } else if ($(this).is("[contenteditable='false']")) {
+                  return false;
+                }
+              })[0]) {
+                return null;
+              }
               if (!sel.isCollapsed && sel.anchorNode.parentNode === sel.focusNode.parentNode) {
                 range = document.createRange();
                 range.setStart(sel.anchorNode, sel.anchorOffset);
