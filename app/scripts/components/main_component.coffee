@@ -73,6 +73,9 @@ define [
       @moveComponentToMousePosition(evt)
 
     addKeyword: (keyword, evt) ->
+      lS = if localStorage["erutpaKeywords"] then localStorage["erutpaKeywords"].split(',') else []
+      lS.push keyword
+      localStorage["erutpaKeywords"] = lS.join(',')
       @props.collection.add keyword: keyword
       if @props.collection.length == 1
         @moveComponentToMousePosition(evt)
