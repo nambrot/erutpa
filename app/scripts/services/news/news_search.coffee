@@ -35,7 +35,7 @@ define [
       .sortBy (article) -> article.time_difference
       .first 5
       .reduce ((sum, article) -> (sum.add article.time_difference)), moment.duration()
-      .value()).isAfter moment().subtract(5, 'd')
+      .value()).isAfter moment().subtract(9, 'd')
       
       [upToDate, articles]
     fetch: ->
